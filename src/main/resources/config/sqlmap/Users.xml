@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--namespace命名空间，作用就是对sql进行分类化管理，理解sql隔离
+注意：使用mapper代理方法开发，namespace有着特殊重要的作用
+-->
+<mapper namespace="test">
+    <!--
+
+    进行模糊查找时，可能返回多条记录
+    resultType指定的是单条记录所映射的java对象类型
+    -->
+    <select id="findUserById" parameterType="int" resultType="com.frankstar.july.eleventh.pojo.User">
+        SELECT * FROM USER WHERE id = #{id}
+    </select>
+</mapper>
