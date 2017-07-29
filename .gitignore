@@ -3,3 +3,14 @@
 Would skip repository java-improve/
 target/generated-sources/
 target/generated-test-sources/
+target/classes
+target/*
+target/classes/com/frankstar/july/eleventh/dao/
+target/classes/com/frankstar/july/eleventh/entity/
+target/classes/com/frankstar/july/eleventh/impl/
+target/classes/com/frankstar/july/eleventh/service/
+target/classes/mapper/
+target/classes/mybatis/
+target/classes/properties/
+target/test-classes/com/frankstar/july/eleventh/controller/TestMailBatis.class
+target/test-classes/com/frankstar/july/eleventh/controller/UserDaoImplTest.class

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+    <mapper namespace="MailMapper">
+        <resultMap id="MailResultMap" type="Mail">
+            <result column="id" property="id"/>
+            <result column="create_time" property="createTime"/>
+            <result column="modify_time" property="modifyTime"/>
+            <result column="web_id" property="webId"/>
+            <result column="mail" property="mail"/>
+            <result column="use_for" property="useFor"/>
+        </resultMap>
+
+        <sql id="fields">
+            id, create_time, modify_time, web_id, mail, use_for
+        </sql>
+
+        <sql id="field_values">
+            null, now(), now(), #{webId}, #{mail}, #{useFor}
+        </sql>
+
+        <insert id="insertMail" parameterType="Mail" useGeneratedKeys="true" keyProperty="id">
+            INSERT INTO `mail` (
+              <include refid="fields"/>
+            ) VALUES (
+              <include refid="field_values"/>
+            );
+
+        </insert>
+
+        <delete id="deleteMail" parameterType="java.lang.Long">
+            DELETE FROM `mail` WHERE id = #{id};
+        </delete>
+
+        <update id="updateMail" parameterType="Mail">
+            UPDATE mail
+            <set>
+                <if test="_parameter != 0">
+                    web_id = #{webId, jdbcType=INTEGER},
+                </if>
+                <if test="_parameter != null">
+                    mail = #{mail, jdbcType=VARCHAR},
+                </if>
+                <if test="_parameter != null">
+                    use_for = #{useFor, jdbcType=VARCHAR},
+                </if>
+            </set>
+            where id = #{id};
+
+        </update>
+
+        <select id="selectMailList" resultMap="MailResultMap">
+            SELECT <include refid="fields"/> FROM mail;
+        </select>
+
+        <select id="selectMailById" resultMap="MailResultMap" parameterType="java.lang.Long">
+            SELECT <include refid="fields"/> FROM mail WHERE id = #{id};
+        </select>
+
+
+    </mapper>

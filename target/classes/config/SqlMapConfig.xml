@@ -20,6 +20,7 @@
 
     <mappers>
         <mapper resource="config/sqlmap/Users.xml"/>
+        <mapper class="com.frankstar.july.eleventh.dao.UserMapper"/>
     </mappers>
 
 </configuration>
