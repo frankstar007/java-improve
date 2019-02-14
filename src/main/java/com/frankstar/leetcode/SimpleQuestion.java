@@ -1,10 +1,8 @@
 package com.frankstar.leetcode;
 
-import com.google.common.collect.Lists;
-import com.google.common.primitives.Ints;
+import java.math.BigInteger;
 import java.util.ArrayList;
 import java.util.List;
-import org.apache.commons.collections.CollectionUtils;
 
 /**
  * @Author :  frankstar
@@ -14,6 +12,15 @@ import org.apache.commons.collections.CollectionUtils;
  * @Desc :   leetcode中难度为简单的题目
  */
 public class SimpleQuestion {
+
+	static class ListNode {
+		int val;
+		ListNode next;
+		ListNode(int x) {
+			val = x;
+		}
+	}
+
 
 	/**
 	 *  @name 两数之和
@@ -48,5 +55,92 @@ public class SimpleQuestion {
 			return null;
 		}
 		return new int[]{result.get(0), result.get(1)};
+	}
+
+
+	/**
+	 * @name 回文数
+	 * @desc 判断一个整数是否是回文数。回文数是指正序（从左向右）和倒序（从右向左）读都是一样的整数。
+	 * @param x
+	 * @return
+	 */
+	public static boolean isPalindrome(int x) {
+		if (x < 0) {
+			return false;
+		}
+		String s = String.valueOf(x);
+		StringBuilder o = new StringBuilder();
+		for (int i = s.length() - 1; i >= 0; i--) {
+			o.append(s.charAt(i));
+		}
+		if (s.equals(o.toString())) {
+			return true;
+		}
+		return false;
+	}
+
+
+	/**
+	 * @name 回文链表
+	 * @param head
+	 * @return
+	 */
+	public static boolean isPalindrome(ListNode head) {
+		if (head == null) {
+			return true;
+		}
+		List<Integer> nums = new ArrayList<>();
+		while (head != null) {
+			nums.add(head.val);
+			head = head.next;
+		}
+		for (int i=nums.size() - 1; i >= 0; i--) {
+			if (!nums.get(i).equals(nums.get(nums.size() - 1 -i))) {
+				return false;
+			}
+		}
+		return true;
+
+	}
+
+	/**
+	 * @name 整数反转
+	 * @param x
+	 * @return
+	 */
+	public static int reverse(int x) {
+		String s = String.valueOf(x);
+		if (x < 0) {
+			s = s.substring(1, s.length());
+		}
+		StringBuilder o = new StringBuilder();
+		for (int i = s.length() - 1; i >= 0; i--) {
+			o.append(s.charAt(i));
+		}
+		if (o.toString().length() >= 10) {
+			return 0;
+		}
+		if (x < 0) {
+
+			return -Integer.valueOf(o.toString());
+		}
+		return Integer.valueOf(o.toString().trim());
+
+	}
+
+
+
+
+
+	public static void main(String[] args) {
+		//isPalindrome(121);
+		System.out.println(Integer.valueOf("012"));
+		int result = reverse(1534236469);
+		System.out.println(result);
+		ListNode node1 = new ListNode(1);
+		ListNode node2 = new ListNode(2);
+		//node2 = node1.next;
+		node1.next = node2;
+		System.out.println(isPalindrome(node1));
 	}
 }
