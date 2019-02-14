@@ -20,7 +20,7 @@ public class MyBatisTest {
 
     @Test
     public void findUserByIdTest() throws IOException {
-        String resource = "config/SqlMapConfig.xml";
+        String resource = "spring.config/SqlMapConfig.xml";
         InputStream inputStream = Resources.getResourceAsStream(resource);//获取配置文件流
         // 创建会话工厂，传入mybatis的配置文件信息
         SqlSessionFactory sqlSessionFactory = new SqlSessionFactoryBuilder().build(inputStream);

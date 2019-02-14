@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+  xmlns:mvc="http://www.springframework.org/schema/mvc"
+  xmlns:context="http://www.springframework.org/schema/context"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:aop="http://www.springframework.org/schema/aop"
+  xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+    http://www.springframework.org/schema/mvc
+    http://www.springframework.org/schema/mvc/spring-mvc-3.0.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context-3.0.xsd http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd">
+
+  <context:component-scan base-package="com.frankstar.spring.mvc.learn.controller" />
+  <!--<mvc:annotation-driven/> -->
+
+
+  <aop:aspectj-autoproxy/>
+  <aop:aspectj-autoproxy proxy-target-class="true"/>
+
+
+  <context:annotation-config />
+  <mvc:annotation-driven />
+
+  <mvc:resources mapping="/static/**" location="/WEB-INF/static/"/>
+
+  <bean id="freemarkerConfigurer"
+    class="org.springframework.web.servlet.view.freemarker.FreeMarkerConfigurer">
+    <property name="templateLoaderPath" value="/WEB-INF/pages/" />
+    <property name="defaultEncoding" value="UTF-8" />
+    <property name="freemarkerSettings">
+      <props>
+        <prop key="template_update_delay">0</prop>
+        <prop key="locale">zh_CN</prop>
+        <prop key="datetime_format">yyyy-MM-dd HH:mm:ss</prop>
+        <prop key="date_format">yyyy-MM-dd</prop>
+        <prop key="number_format">##</prop>
+        <prop key="defaultEncoding">UTF-8</prop>
+      </props>
+    </property>
+
+    <property name="freemarkerVariables">
+      <map>
+        <!--<entry key="menu" value-ref="menuItemFreemarkerModal"></entry>-->
+        <entry key="menu" value-ref="menuTag"></entry>
+        <entry key="userInfo" value-ref="userInfo"></entry>
+        <entry key="allMenu" value-ref="allMenuTag"></entry>
+      </map>
+    </property>
+
+  </bean>
+
+  <bean id="menuItemFreemarkerModal" class="com.dianping.cip.authority.common.freemarkerTag.MenuItemFreemarkerModal"/>
+  <bean id="userInfo" class="com.dianping.cip.growth.mana.web.taglib.UserInfoTag"/>
+  <bean id="menuTag" class="com.dianping.cip.growth.mana.web.taglib.MenuTag"/>
+  <bean id="allMenuTag" class="com.dianping.cip.growth.mana.web.taglib.AllMenuTag"/>
+  <!-- FreeMarker视图解析 -->
+  <bean id="viewResolver"
+    class="org.springframework.web.servlet.view.freemarker.FreeMarkerViewResolver">
+    <property name="viewClass"
+      value="org.springframework.web.servlet.view.freemarker.FreeMarkerView" />
+    <property name="suffix" value=".ftl" />
+    <property name="contentType" value="text/html;charset=utf-8" />
+    <property name="exposeRequestAttributes" value="true" />
+    <property name="exposeSessionAttributes" value="true" />
+    <property name="requestContextAttribute" value="request" />
+    <property name="exposeSpringMacroHelpers" value="true" />
+    <property name="allowSessionOverride" value="true"/>
+    <property name="allowRequestOverride" value="true" />
+  </bean>
+
+  <!-- annotation的方法映射适配器 -->
+  <bean id="handlerAdapter"
+    class="org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter" />
+
+  <!--annotation默认的方法映射适配器 -->
+  <bean id="handlerMapping"
+    class="org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMapping">
+    <property name="order" value="1" />
+  </bean>
+
+  <mvc:resources mapping="/index.html" location="/index.html" />
+
+</beans>
