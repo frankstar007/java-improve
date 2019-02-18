@@ -12,6 +12,7 @@
     <modules>
         <module>spring-mvc-learn</module>
         <module>java-algorithm-learn</module>
+        <module>java-web-learn</module>
     </modules>
 
     <properties>
@@ -142,6 +143,13 @@
             <artifactId>spring-jdbc</artifactId>
             <version>${spring.version}</version>
         </dependency>
+
+            <dependency>
+                <groupId>javax.servlet</groupId>
+                <artifactId>servlet-api</artifactId>
+                <version>2.5</version>
+                <scope>provided</scope>
+            </dependency>
 
 
     </dependencies>

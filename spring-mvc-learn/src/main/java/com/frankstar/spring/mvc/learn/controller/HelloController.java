@@ -1,9 +1,12 @@
 package com.frankstar.spring.mvc.learn.controller;
 
-import org.springframework.stereotype.Controller;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.servlet.mvc.Controller;
 
 /**
  * @Author :  frankstar
@@ -12,15 +15,19 @@ import org.springframework.web.bind.annotation.RequestMethod;
  * @Project :  java-improve
  * @Desc :
  */
-@Controller
 @RequestMapping
-public class HelloController {
+public class HelloController implements Controller {
 
 
-	@RequestMapping(value = "/hello", method = RequestMethod.GET)
+	@RequestMapping(value = "hello", method = RequestMethod.GET)
 	public String hello(ModelMap modelMap) {
 		modelMap.addAttribute("message", "hello frankstar!");
 
 		return "hello";
+	}
+
+	@Override
+	public ModelAndView handleRequest(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse) throws Exception {
+		return null;
 	}
 }

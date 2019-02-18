@@ -17,9 +17,14 @@
   <mvc:default-servlet-handler/>
   <context:annotation-config/>
 
+  <!--静态资源的获取-->
+  <mvc:resources mapping="/javascript/**" location="WEB-INF/static/javascript/"/>
+  <mvc:resources mapping="/styles/**" location="WEB-INF/static/css/"/>
+  <mvc:resources mapping="/images/**" location="WEB-INF/static/images/"/>
+
 
   <bean id="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
-    <property name="prefix" value="/WEB-INF/jsp/"/>
+    <property name="prefix" value="/WEB-INF/view/"/>
     <property name="suffix" value=".jsp"/>
 
   </bean>
