@@ -7,6 +7,7 @@
     <groupId>com.frankstar</groupId>
     <artifactId>java-improve</artifactId>
     <version>1.0-SNAPSHOT</version>
+    <packaging>pom</packaging>
 
     <modules>
         <module>spring-mvc-learn</module>
@@ -18,7 +19,8 @@
         <spring.version>4.3.14.RELEASE</spring.version>
     </properties>
 
-    <dependencies>
+    <dependencyManagement>
+        <dependencies>
 
         <!-- https://mvnrepository.com/artifact/org.mybatis/mybatis -->
         <dependency>
@@ -142,10 +144,11 @@
         </dependency>
 
 
-
     </dependencies>
+    </dependencyManagement>
 
-        <build>
+
+    <build>
             <plugins>
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
