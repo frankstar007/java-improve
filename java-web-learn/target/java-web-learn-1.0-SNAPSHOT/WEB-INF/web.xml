@@ -70,6 +70,28 @@
     <url-pattern>/context</url-pattern>
   </servlet-mapping>
 
+  <servlet>
+    <servlet-name>cacheServlet</servlet-name>
+    <servlet-class>com.frankstar.java.web.learn.servlet.CacheServlet</servlet-class>
+  </servlet>
+
+  <!--如果某个映射路径就是一个正斜杠，这个servlet就是当前整个应用的缺省servlet-->
+  <servlet-mapping>
+    <servlet-name>cacheServlet</servlet-name>
+    <url-pattern>/cache</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>picServlet</servlet-name>
+    <servlet-class>com.frankstar.java.web.learn.servlet.GeneratePicServlet</servlet-class>
+  </servlet>
+
+  <!--如果某个映射路径就是一个正斜杠，这个servlet就是当前整个应用的缺省servlet-->
+  <servlet-mapping>
+    <servlet-name>picServlet</servlet-name>
+    <url-pattern>/pic</url-pattern>
+  </servlet-mapping>
+
 
 
 

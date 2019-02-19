@@ -1,0 +1,14 @@
+
+Ksquid:S19896"(Add a "try/catch" block for "getWriter".(¹äŠ¢ÿÿÿÿÿ8—õ¹ƒ-
+Gsquid:S1989"$Add a "try/catch" block for "doGet".(®Ó‘ûÿÿÿÿÿ8¡˜ã‚-
+Dsquid:S19890"&Add a "try/catch" block for "forward".(ò¢ë‡8Íª…ƒ-
+Gsquid:S1989"$Add a "try/catch" block for "doGet".(®Ó‘ûÿÿÿÿÿ8¡˜ã‚-
+Lsquid:S1989,".Add a "try/catch" block for "getOutputStream".(½Øöº8¬¾ƒ-
+Ksquid:S19899"(Add a "try/catch" block for "getWriter".(¹äŠ¢ÿÿÿÿÿ8Ò³Äƒ-
+Esquid:S19895"'Add a "try/catch" block for "readFile".( ÿ˜‘8ñËÿƒ-
+Esquid:S19898"'Add a "try/catch" block for "readFile".( ÿ˜‘8ñËÿƒ-
+Rsquid:S1172?"/Remove this unused method parameter "response".(‰‘½¦üÿÿÿÿ8‚à¸ƒ-
+Dsquid:S19890"&Add a "try/catch" block for "forward".(ò¢ë‡8Íª…ƒ-
+Bsquid:S1989,"$Add a "try/catch" block for "write".(½Øöº8¦÷ƒ-
+Esquid:S1989;"'Add a "try/catch" block for "readFile".( ÿ˜‘8ñËÿƒ-
+isquid:CommentedOutCodeLine&"<This block of commented-out lines of code should be removed.(«ßôİ8²¿Œƒ-

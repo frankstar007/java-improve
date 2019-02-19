@@ -2,6 +2,7 @@ package com.frankstar.java.web.learn.servlet;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.text.MessageFormat;
 import java.util.Enumeration;
 import java.util.Properties;
 import javax.servlet.RequestDispatcher;
@@ -40,12 +41,12 @@ public class ContextServlet extends HttpServlet {
 //			String attribute = stringEnumeration.nextElement();
 //			response.getWriter().println(attribute + "------" + context.getAttribute(attribute));
 //		}
-		String data = "context forward to root";
-		response.getOutputStream().write(data.getBytes());
+//		String data = "context forward to root";
+//		response.getOutputStream().write(data.getBytes());
 
 		//实现请求转发
-		RequestDispatcher requestDispatcher = context.getRequestDispatcher("/");
-		requestDispatcher.forward(request, response);
+//		RequestDispatcher requestDispatcher = context.getRequestDispatcher("/");
+//		requestDispatcher.forward(request, response);
 
 		//实现资源读取
 		response.setHeader("content-type", "text/html;charset=UTF-8");
@@ -61,9 +62,15 @@ public class ContextServlet extends HttpServlet {
 	}
 
 	private void readFile(HttpServletResponse response) throws IOException {
-		InputStream inputStream = this.getServletContext().getResourceAsStream("db/db.config");
+		InputStream inputStream = getClass().getClassLoader().getResourceAsStream("db/db.properties");
 		Properties properties = new Properties();
 		properties.load(inputStream);
-
+		String driver = properties.getProperty("driver");
+		String url = properties.getProperty("url");
+		String username = properties.getProperty("username");
+		String password = properties.getProperty("password");
+		response.getWriter().println("配置文件");
+		response.getWriter().println(MessageFormat.format("driver={0}, url={1}, username={2}, password={3}", driver, url, username, password));
+		response.getWriter().println(this.getServletContext().getResourcePaths("/db/db.properties"));
 	}
 }

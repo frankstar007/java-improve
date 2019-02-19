@@ -1,0 +1,8 @@
+
+ysquid:S2226"XRemove this misleading mutable servlet instance field or make it "static" and/or "final"(Ø”“ÿÿÿÿÿ8Êíäÿ-
+Isquid:S1989"(Add a "try/catch" block for "getWriter".(¹äŠ¢ÿÿÿÿÿ8’¶‚€-
+Dsquid:S1989"(Add a "try/catch" block for "getWriter".(ÅÌ°8’Ç‹€-
+Dsquid:S1989"(Add a "try/catch" block for "getWriter".(¹Š÷µ8öê€€-
+@squid:S1989"$Add a "try/catch" block for "doGet".(Æ¯Ü8´€şÿ-
+@squid:S1989"$Add a "try/catch" block for "doGet".(Æ¯Ü8´€şÿ-
+Isquid:S1989"(Add a "try/catch" block for "getWriter".(²ƒ„äıÿÿÿÿ8Í¬Ò€-
