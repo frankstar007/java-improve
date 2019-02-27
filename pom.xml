@@ -106,12 +106,32 @@
             <version>2.11.0</version>
         </dependency>
 
+            <dependency>
+                <groupId>javax.servlet</groupId>
+                <artifactId>javax.servlet-api</artifactId>
+                <version>3.1.0</version>
+            </dependency>
+
         <!--lombok-->
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
             <version>1.16.10</version>
         </dependency>
+
+            <!--guava-->
+            <dependency>
+                <groupId>com.google.guava</groupId>
+                <artifactId>guava</artifactId>
+                <version>27.0.1-jre</version>
+            </dependency>
+
+            <!--json-->
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>fastjson</artifactId>
+                <version>1.2.47</version>
+            </dependency>
 
         <!--spring -->
         <dependency>
@@ -167,25 +187,25 @@
                     </configuration>
                 </plugin>
             </plugins>
-            <resources>
-                <resource>
-                    <directory>java-algorithm-learn/src/main/resources</directory>
-                        <includes>
-                            <include>**/*.properties</include>
-                            <include>**/*.xml</include>
-                        </includes>
-                    <filtering>true</filtering>
-                </resource>
+            <!--<resources>-->
+                <!--&lt;!&ndash;<resource>&ndash;&gt;-->
+                    <!--&lt;!&ndash;<directory>java-algorithm-learn/src/main/resources</directory>&ndash;&gt;-->
+                        <!--&lt;!&ndash;<includes>&ndash;&gt;-->
+                            <!--&lt;!&ndash;<include>**/*.properties</include>&ndash;&gt;-->
+                            <!--&lt;!&ndash;<include>**/*.xml</include>&ndash;&gt;-->
+                        <!--&lt;!&ndash;</includes>&ndash;&gt;-->
+                    <!--&lt;!&ndash;<filtering>true</filtering>&ndash;&gt;-->
+                <!--&lt;!&ndash;</resource>&ndash;&gt;-->
 
-                <resource>
-                    <directory>java-algorithm-learn/src/main/java</directory>
-                        <includes>
-                            <include>**/*.properties</include>
-                                <include>**/*.xml</include>
-                        </includes>
-                    <filtering>true</filtering>
-                </resource>
-            </resources>
+                <!--&lt;!&ndash;<resource>&ndash;&gt;-->
+                    <!--&lt;!&ndash;<directory>java-algorithm-learn/src/main/java</directory>&ndash;&gt;-->
+                        <!--&lt;!&ndash;<includes>&ndash;&gt;-->
+                            <!--&lt;!&ndash;<include>**/*.properties</include>&ndash;&gt;-->
+                                <!--&lt;!&ndash;<include>**/*.xml</include>&ndash;&gt;-->
+                        <!--&lt;!&ndash;</includes>&ndash;&gt;-->
+                    <!--&lt;!&ndash;<filtering>true</filtering>&ndash;&gt;-->
+                <!--&lt;!&ndash;</resource>&ndash;&gt;-->
+            <!--</resources>-->
         </build>
 
 

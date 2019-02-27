@@ -27,33 +27,38 @@ public class MiddleQuestion {
 	 * @return
 	 */
 	public static ListNode addTwoNumbers(ListNode l1, ListNode l2) {
-		ListNode result = new ListNode((l1.val + l2.val) % 10);
-		ListNode head = null;
+		ListNode result = new ListNode(0);
+		ListNode head = result;
 		ListNode p = l1;
 		ListNode q = l2;
 		boolean incr = false;
-		while (p.next != null) {
+		while (p != null) {
 			if (incr) {
-				incr = (p.val + q.val + 1) % 10 > 1;
-				head = new ListNode((p.val + q.val + 1) % 10);
-			} else {
-				head = new ListNode((p.val +  q.val) % 10);
-				incr = (p.val + q.val) % 10 > 1;
-			}
-			ListNode tmp = head;
-			head.next = new ListNode(0);
-			tmp.next = head.next;
-			head.next.next = null;
-			//head = head.next;
-			p = p.next;
-			q = q.next;
-		}
-		head.next = result;
+				if (q != null) {
+					result = new ListNode((p.val + q.val + 1) % 10);
+					incr = (p.val + q.val + 1) >= 10;
+				} else {
+					result = new ListNode((p.val + 1) % 10);
+					incr = p.val + 1 >= 10;
+				}
 
-		if (q.next != null) {
-			head.next = q.next;
+			} else {
+				if (q != null) {
+					result = new ListNode((p.val + q.val) % 10);
+					incr = (p.val + q.val) >= 10;
+				} else {
+					result = new ListNode(p.val);
+					incr = false;
+				}
+
+			}
+			p = p.next;
+			if (q != null) {
+				q = q.next;
+			}
+			result = result.next;
 		}
-		return  result;
+		return  head;
 
 	}
 
@@ -74,13 +79,11 @@ public class MiddleQuestion {
 
 
 	public static void main(String[] args) {
-		ListNode l1 = new ListNode(2);
-		l1.next = new ListNode(4);
-		l1.next.next = new ListNode(3);
+		ListNode l1 = new ListNode(9);
+		l1.next = new ListNode(1);
+		l1.next.next = new ListNode(6);
 
-		ListNode l2 = new ListNode(5);
-		l2.next = new ListNode(6);
-		l2.next.next = new ListNode(4);
+		ListNode l2 = new ListNode(0);
 
 		ListNode result = addTwoNumbers(l1 , l2);
 		while(result != null) {
