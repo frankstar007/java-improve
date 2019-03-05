@@ -2,7 +2,10 @@ package com.frankstar.leetcode;
 
 import java.math.BigInteger;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 /**
  * @Author :  frankstar
@@ -128,19 +131,136 @@ public class SimpleQuestion {
 
 	}
 
+	/**
+	 * 三角形最大之和
+	 * @param A
+	 * @return
+	 */
+	public static int largestPerimeter(int[] A) {
+		if (A.length < 3){
+			return 0;
+		}
+		//先排序
+		for(int i=0; i<A.length; i++) {
+			boolean flag = true;
+			for (int j=i+1; j<A.length; j++) {
+				if (A[j] > A[i]) {
+					int tmp = A[j];
+					A[j] = A[i];
+					A[i] = tmp;
+					flag = false;
+				}
+			}
+			if (flag) {
+				break;
+			}
+		}
 
+		int k=0;
+		boolean flag = true;
+		for (int i = 0; i<A.length -2; i++) {
+			//只要最小的两个数相加大于最大的即可
+			if (A[i+1] + A[i+2]> A[i]) {
+				k = i;
+				flag = false;
+				break;
+
+			}
+		}
+		if (!flag) {
+			return A[k] + A[k+1] + A[k+2];
+		}
+		return 0;
+
+
+	}
+
+	/**
+	 * 给定两个非负整数 x 和 y，如果某一整数等于 x^i + y^j，其中整数 i >= 0 且 j >= 0，那么我们认为该整数是一个强整数。
+
+	 返回值小于或等于 bound 的所有强整数组成的列表。
+
+	 你可以按任何顺序返回答案。在你的回答中，每个值最多出现一次。
+	 * @param x
+	 * @param y
+	 * @param bound
+	 * @return
+	 */
+	public static List<Integer> powerfulIntegers(int x, int y, int bound) {
+		if (bound < 2) {
+			return new ArrayList<>();
+		}
+
+		int xx = (int) (Math.log(bound) / Math.log(x));
+		int yy = (int) (Math.log(bound) / Math.log(y));
+
+		Set<Integer> resultSet = new HashSet<>();
+		for(int i=0; i<=xx; i++) {
+			int a = (int)Math.pow(x, i);
+			int bb = bound - a;
+			int j = (int) (Math.log(bb) / Math.log(y));
+			for(int k=0; k<=j; k++) {
+				resultSet.add((int)(Math.pow(x,i) + Math.pow(y,k)));
+			}
+		}
+
+		return new ArrayList<Integer>(resultSet);
+	}
+
+
+	/**
+	 * 我们有一个由平面上的点组成的列表 points。需要从中找出 K 个距离原点 (0, 0) 最近的点。
+
+	 （这里，平面上两点之间的距离是欧几里德距离。）
+
+	 你可以按任何顺序返回答案。除了点坐标的顺序之外，答案确保是唯一的。
+
+	 * @param points
+	 * @param K
+	 * @return
+	 */
+	public static int[][] kClosest(int[][] points, int K) {
+		int[] result = new int [points.length];
+
+		for (int i=0; i < result.length; i++) {
+			result[i] = sqrt(points[i]) ;
+		}
+		Arrays.sort(result);
+		int distK = result[K-1];
+
+		int[][] ans = new int[K][2];
+		int t = 0;
+		for (int i=0; i < result.length; i++) {
+			if (distK >= sqrt(points[i])) {
+				ans[t++] = points[i];
+			}
+		}
+		return ans;
+	}
+
+	public static int sqrt(int[] point) {
+		return point[0]* point[0] + point[1] * point[1];
+	}
 
 
 
 	public static void main(String[] args) {
 		//isPalindrome(121);
-		System.out.println(Integer.valueOf("012"));
-		int result = reverse(1534236469);
-		System.out.println(result);
-		ListNode node1 = new ListNode(1);
-		ListNode node2 = new ListNode(2);
-		//node2 = node1.next;
-		node1.next = node2;
-		System.out.println(isPalindrome(node1));
+//		System.out.println(Integer.valueOf("012"));
+//		int result = reverse(1534236469);
+//		System.out.println(result);
+//		ListNode node1 = new ListNode(1);
+//		ListNode node2 = new ListNode(2);
+//		//node2 = node1.next;
+//		node1.next = node2;
+//		System.out.println(isPalindrome(node1));
+		int [] A = new int[] {3,9,2,5,2,19};
+		int [] B = new int[] {653332,10,2028,58910,403781,8594,36408,249550,478,95319,1253,42,69,22501,15,295,182,13906,5311,112};
+		Arrays.sort(A);
+		System.out.println(Math.log(Math.pow(10, 6)) /Math.log(2));
+		//System.out.println(A);
+		//System.out.println(largestPerimeter(A));
+		//System.out.println(largestPerimeter(B));
+		System.out.println(powerfulIntegers(1,2,100));
 	}
 }

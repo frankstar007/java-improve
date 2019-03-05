@@ -1,5 +1,8 @@
 package com.frankstar.leetcode;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * @Author :  frankstar
  * @AddTime :  2019/2/13
@@ -29,25 +32,42 @@ public class MiddleQuestion {
 	public static ListNode addTwoNumbers(ListNode l1, ListNode l2) {
 		ListNode result = new ListNode(0);
 		ListNode head = result;
+		int a1 = 0,a2 = 0;
+		ListNode h1 = l1;
+		ListNode h2 = l2;
+		while(h1 != null) {
+			h1 = h1.next;
+			a1++;
+		}
+
+		while (h2 != null) {
+			h2 = h2.next;
+			a2++;
+		}
+		if (a1 < a2) {
+			ListNode tmep = l1;
+			l1 = l2;
+			l2 = tmep;
+		}
 		ListNode p = l1;
 		ListNode q = l2;
 		boolean incr = false;
 		while (p != null) {
 			if (incr) {
 				if (q != null) {
-					result = new ListNode((p.val + q.val + 1) % 10);
+					result.next = new ListNode((p.val + q.val + 1) % 10);
 					incr = (p.val + q.val + 1) >= 10;
 				} else {
-					result = new ListNode((p.val + 1) % 10);
+					result.next = new ListNode((p.val + 1) % 10);
 					incr = p.val + 1 >= 10;
 				}
 
 			} else {
 				if (q != null) {
-					result = new ListNode((p.val + q.val) % 10);
+					result.next = new ListNode((p.val + q.val) % 10);
 					incr = (p.val + q.val) >= 10;
 				} else {
-					result = new ListNode(p.val);
+					result.next = new ListNode(p.val);
 					incr = false;
 				}
 
@@ -58,7 +78,10 @@ public class MiddleQuestion {
 			}
 			result = result.next;
 		}
-		return  head;
+		if(incr) {
+			result.next = new ListNode(1);
+		}
+		return  head.next;
 
 	}
 
@@ -73,24 +96,102 @@ public class MiddleQuestion {
 			return 0;
 		}
 
+
+
 		return -1;
+	}
+
+	/**
+	 * 将一个给定字符串根据给定的行数，以从上往下、从左到右进行 Z 字形排列。
+	 * 比如输入字符串为 "LEETCODEISHIRING" 行数为 3 时
+	 * 你的输出需要从左往右逐行读取，产生出一个新的字符串，比如："LCIRETOESIIGEDHN"
+	 * @param s
+	 * @param numRows
+	 * @return
+	 */
+	public static String convert(String s, int numRows) {
+		if (s.length() == 0 || s.length() == 1) {
+			return s;
+		}
+		List<Character> characters = new ArrayList<>();
+
+
+		for (int k = 0; k < numRows; k++) {
+			int total = numRows + numRows - 2;
+			for (int i= 0; i < s.length(); i++) {
+				int left = i % (numRows + numRows - 2 );
+				if (left == k || (i + k) % total == 0) {
+					characters.add(s.charAt(i));
+				}
+			}
+		}
+		char [] result = new char[s.length()];
+		for (int i = 0; i < characters.size(); i++) {
+			result[i] = characters.get(i);
+		}
+		//System.out.println(String.valueOf(characters));
+		return String.valueOf(result);
+	}
+
+	public static String covertOfficial(String s, int numRows) {
+		if (numRows == 1) {
+			return s;
+		}
+		List<StringBuilder> rows = new ArrayList<>();
+		for (int i = 0; i < Math.min(numRows, s.length()); i++) {
+			rows.add(new StringBuilder());
+		}
+		int curency = 0;
+		boolean goingDown = false;
+		for (char c : s.toCharArray()) {
+			rows.get(curency).append(c);
+			if (curency == 0 || curency == numRows - 1) {
+				goingDown = !goingDown;
+			}
+			curency += goingDown ? 1 : -1;
+		}
+		StringBuilder ret = new StringBuilder();
+		for (StringBuilder row : rows) {
+			ret.append(row);
+		}
+		return ret.toString();
+	}
+
+	/**
+	 * 最长回文字符串
+	 * @param s
+	 * @return
+	 */
+	public String longestPalindrome(String s) {
+		if(s.length() <= 1) {
+			return s;
+		}
+
+		for (int i = 0; i < s.length() - 1; i++) {
+			char tmp = s.charAt(i);
+			int last = s.lastIndexOf(String.valueOf(tmp));
+			if (i == last) {
+				continue;
+			}
+			String left = s.substring(i, last+1);
+			for (int k = 0; k < left.length() / 2 + 1; k++) {
+				if(left.charAt(k) != left.charAt(last - k)) {
+					left = left.substring(0, last);
+					break;
+				}
+			}
+
+
+		}
+		return "";
 	}
 
 
 
+
+
 	public static void main(String[] args) {
-		ListNode l1 = new ListNode(9);
-		l1.next = new ListNode(1);
-		l1.next.next = new ListNode(6);
-
-		ListNode l2 = new ListNode(0);
-
-		ListNode result = addTwoNumbers(l1 , l2);
-		while(result != null) {
-			System.out.println(result.val);
-			result = result.next;
-		}
-
-		System.out.println(addTwoNumbers(l1, l2));
+		String s = "PAYPALISHIRING";
+		System.out.println(convert(s, 3));
 	}
 }
