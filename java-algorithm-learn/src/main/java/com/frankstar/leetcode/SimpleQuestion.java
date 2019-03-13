@@ -242,9 +242,41 @@ public class SimpleQuestion {
 		return point[0]* point[0] + point[1] * point[1];
 	}
 
+	public static ListNode removeNthFromEnd(ListNode head, int n) {
+		List<Integer> nodes = new ArrayList<>();
+		while(head != null) {
+			nodes.add(head.val);
+			head = head.next;
+		}
+		nodes.remove(nodes.size() - n);
+		ListNode result = new ListNode(0);
+		ListNode p = result;
+		for (int i=0; i< nodes.size() - 1; i++) {
+			result.next = new ListNode(nodes.get(i));
+			result.next.next = new ListNode(nodes.get(i+1));
+			result = result.next;
+		}
+		if (nodes.size() == 1) {
+			return new ListNode(nodes.get(0));
+		}
+
+		return p.next;
+
+	}
+
+
+
+
 
 
 	public static void main(String[] args) {
+		ListNode head = new ListNode(1);
+		head.next = new ListNode(2);
+//		head.next.next = new ListNode(3);
+//		head.next.next.next = new ListNode(4);
+//		head.next.next.next.next = new ListNode(5);
+		removeNthFromEnd(head, 1);
+
 		//isPalindrome(121);
 //		System.out.println(Integer.valueOf("012"));
 //		int result = reverse(1534236469);
@@ -258,6 +290,7 @@ public class SimpleQuestion {
 		int [] B = new int[] {653332,10,2028,58910,403781,8594,36408,249550,478,95319,1253,42,69,22501,15,295,182,13906,5311,112};
 		Arrays.sort(A);
 		System.out.println(Math.log(Math.pow(10, 6)) /Math.log(2));
+		String ab = "";
 		//System.out.println(A);
 		//System.out.println(largestPerimeter(A));
 		//System.out.println(largestPerimeter(B));

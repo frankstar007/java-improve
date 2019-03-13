@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/java-algorithm-learn/java-algorithm-learn.iml" filepath="$PROJECT_DIR$/java-algorithm-learn/java-algorithm-learn.iml" />
+      <module fileurl="file://$PROJECT_DIR$/java-basic-learn/java-basic-learn.iml" filepath="$PROJECT_DIR$/java-basic-learn/java-basic-learn.iml" />
       <module fileurl="file://$PROJECT_DIR$/java-improve.iml" filepath="$PROJECT_DIR$/java-improve.iml" />
       <module fileurl="file://$PROJECT_DIR$/java-web-learn/java-web-learn.iml" filepath="$PROJECT_DIR$/java-web-learn/java-web-learn.iml" />
       <module fileurl="file://$PROJECT_DIR$/spring-mvc-learn/spring-mvc-learn.iml" filepath="$PROJECT_DIR$/spring-mvc-learn/spring-mvc-learn.iml" />
