@@ -29,6 +29,7 @@ public class ArrayPractice {
 
 
 	public static void main(String[] args) {
+
 		System.out.println(new ArrayPractice().removeDuplicates(new int[]{1,1,2}));
 	}
 
