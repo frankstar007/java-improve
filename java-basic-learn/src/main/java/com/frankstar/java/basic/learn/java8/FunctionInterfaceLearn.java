@@ -19,5 +19,13 @@ public class FunctionInterfaceLearn {
         Integer convert = converter.convert("123");
         System.out.println(convert);
 
+        int num = 1;
+        Converter<Integer, String> stringConverter = from -> String.valueOf(from + num);
+        String result = stringConverter.convert(2);
+        System.out.println(result);
+        //num = 3(lambda表达式引用的本地变量必须是最终变量或实际上的最终变量);
+        System.out.println(num);
+
+
     }
 }
