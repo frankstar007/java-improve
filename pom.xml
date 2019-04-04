@@ -15,6 +15,7 @@
         <module>java-web-learn</module>
         <module>java-basic-learn</module>
         <module>java-data-structure</module>
+        <module>java-design-patterns</module>
     </modules>
 
     <properties>
