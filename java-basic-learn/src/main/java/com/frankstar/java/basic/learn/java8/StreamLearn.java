@@ -1,4 +1,4 @@
-package com.frankstar.java.basic.learn.stream;
+package com.frankstar.java.basic.learn.java8;
 
 import com.frankstar.java.basic.learn.example.Student;
 import com.google.common.collect.Lists;

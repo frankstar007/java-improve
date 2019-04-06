@@ -8,6 +8,9 @@
         <outputRelativeToContentRoot value="true" />
         <module name="java-algorithm-learn" />
         <module name="java-basic-learn" />
+        <module name="java-data-structure" />
+        <module name="java-design-patterns" />
+        <module name="java-improve-service" />
         <module name="java-web-learn" />
         <module name="spring-mvc-learn" />
       </profile>
@@ -15,7 +18,10 @@
     <bytecodeTargetLevel>
       <module name="java-algorithm-learn" target="1.8" />
       <module name="java-basic-learn" target="1.8" />
+      <module name="java-data-structure" target="1.8" />
+      <module name="java-design-patterns" target="1.8" />
       <module name="java-improve" target="1.8" />
+      <module name="java-improve-service" target="1.8" />
       <module name="java-web-learn" target="1.8" />
       <module name="spring-mvc-learn" target="1.8" />
     </bytecodeTargetLevel>

@@ -7,6 +7,7 @@
       <module fileurl="file://$PROJECT_DIR$/java-data-structure/java-data-structure.iml" filepath="$PROJECT_DIR$/java-data-structure/java-data-structure.iml" />
       <module fileurl="file://$PROJECT_DIR$/java-design-patterns/java-design-patterns.iml" filepath="$PROJECT_DIR$/java-design-patterns/java-design-patterns.iml" />
       <module fileurl="file://$PROJECT_DIR$/java-improve.iml" filepath="$PROJECT_DIR$/java-improve.iml" />
+      <module fileurl="file://$PROJECT_DIR$/java-improve-service/java-improve-service.iml" filepath="$PROJECT_DIR$/java-improve-service/java-improve-service.iml" />
       <module fileurl="file://$PROJECT_DIR$/java-web-learn/java-web-learn.iml" filepath="$PROJECT_DIR$/java-web-learn/java-web-learn.iml" />
       <module fileurl="file://$PROJECT_DIR$/spring-mvc-learn/spring-mvc-learn.iml" filepath="$PROJECT_DIR$/spring-mvc-learn/spring-mvc-learn.iml" />
     </modules>
