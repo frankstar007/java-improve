@@ -17,6 +17,7 @@
         <module>java-data-structure</module>
         <module>java-design-patterns</module>
       <module>java-improve-service</module>
+      <module>java-frame-learn</module>
     </modules>
 
     <properties>
@@ -162,11 +163,36 @@
             <version>${spring.version}</version>
         </dependency>
 
+
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-expression</artifactId>
+                <version>${spring.version}</version>
+            </dependency>
+
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-context</artifactId>
             <version>${spring.version}</version>
         </dependency>
+
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-beans</artifactId>
+                <version>${spring.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-test</artifactId>
+                <version>${spring.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-core</artifactId>
+                <version>${spring.version}</version>
+            </dependency>
 
         <dependency>
             <groupId>org.springframework</groupId>
@@ -202,26 +228,49 @@
                         <target>1.8</target>
                     </configuration>
                 </plugin>
+                <plugin>
+                    <artifactId>maven-resources-plugin</artifactId>
+                    <version>2.5</version>
+                    <executions>
+                        <execution>
+                            <id>copy-xmls</id>
+                            <phase>process-sources</phase>
+                            <goals>
+                                <goal>copy-resources</goal>
+                            </goals>
+                            <configuration>
+                                <outputDirectory>${basedir}/target/classes</outputDirectory>
+                                <resources>
+                                    <resource>
+                                        <directory>${basedir}/src/main/java</directory>
+                                        <includes>
+                                            <include>**/*.xml</include>
+                                        </includes>
+                                    </resource>
+                                </resources>
+                            </configuration>
+                        </execution>
+                    </executions>
+                </plugin>
             </plugins>
-            <!--<resources>-->
-                <!--&lt;!&ndash;<resource>&ndash;&gt;-->
-                    <!--&lt;!&ndash;<directory>java-algorithm-learn/src/main/resources</directory>&ndash;&gt;-->
-                        <!--&lt;!&ndash;<includes>&ndash;&gt;-->
-                            <!--&lt;!&ndash;<include>**/*.properties</include>&ndash;&gt;-->
-                            <!--&lt;!&ndash;<include>**/*.xml</include>&ndash;&gt;-->
-                        <!--&lt;!&ndash;</includes>&ndash;&gt;-->
-                    <!--&lt;!&ndash;<filtering>true</filtering>&ndash;&gt;-->
-                <!--&lt;!&ndash;</resource>&ndash;&gt;-->
-
-                <!--&lt;!&ndash;<resource>&ndash;&gt;-->
-                    <!--&lt;!&ndash;<directory>java-algorithm-learn/src/main/java</directory>&ndash;&gt;-->
-                        <!--&lt;!&ndash;<includes>&ndash;&gt;-->
-                            <!--&lt;!&ndash;<include>**/*.properties</include>&ndash;&gt;-->
-                                <!--&lt;!&ndash;<include>**/*.xml</include>&ndash;&gt;-->
-                        <!--&lt;!&ndash;</includes>&ndash;&gt;-->
-                    <!--&lt;!&ndash;<filtering>true</filtering>&ndash;&gt;-->
-                <!--&lt;!&ndash;</resource>&ndash;&gt;-->
-            <!--</resources>-->
+            <resources>
+                <resource>
+                    <directory>src/main/resources</directory>
+                    <excludes>
+                        <exclude>**/*.properties</exclude>
+                        <exclude>**/*.xml</exclude>
+                    </excludes>
+                    <filtering>false</filtering>
+                </resource>
+                <resource>
+                    <directory>src/main/java</directory>
+                    <includes>
+                        <include>**/*.properties</include>
+                        <include>**/*.xml</include>
+                    </includes>
+                    <filtering>false</filtering>
+                </resource>
+            </resources>
         </build>
 
 
