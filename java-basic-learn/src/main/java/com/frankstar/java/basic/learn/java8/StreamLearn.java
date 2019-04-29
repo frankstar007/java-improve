@@ -7,6 +7,8 @@ import java.util.Date;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
+
 import org.apache.commons.lang3.math.NumberUtils;
 
 /**
@@ -51,6 +53,7 @@ public class StreamLearn {
 		students.add(student2);
 
 		List<Integer> nums = Lists.newArrayList(2,345,6547,23);
+		Stream.of(nums).findFirst().ifPresent(System.out::println);
 
 		System.out.println(trans(students));
 		System.out.println("------");
@@ -58,7 +61,17 @@ public class StreamLearn {
 		System.out.println("@@@@@@@@");
 
 		System.out.println(sort(students));
-		System.out.println(tranString(nums));
+		Stream.of("d2", "a2", "b1", "b3", "c")
+				.map(s -> {
+					System.out.println("map" + s);
+					return s.toUpperCase();
+				})
+				.anyMatch(s -> {
+					System.out.println("anyMatch" + s);
+					return s.startsWith("A");
+				});
+
+
 
 	}
 
