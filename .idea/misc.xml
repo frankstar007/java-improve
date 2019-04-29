@@ -39,6 +39,7 @@
     </properties>
   </component>
   <component name="FrameworkDetectionExcludesConfiguration">
+    <file type="web" url="file://$PROJECT_DIR$/java-improve-service" />
     <file type="web" url="file://$PROJECT_DIR$/java-web-learn" />
     <file type="web" url="file://$PROJECT_DIR$/spring-mvc-learn" />
   </component>

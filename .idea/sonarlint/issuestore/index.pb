@@ -19,8 +19,6 @@ o
 ?java-algorithm-learn/src/main/resources/config/SqlMapConfig.xml,1/e/1eb2f0e854fda4c840af7bcb1996918d35c1c42a
 ç
 ]spring-mvc-learn/src/main/java/com/frankstar/spring/mvc/learn/controller/HelloController.java,9/4/941494d6a80e99bf0249c0668dea26028b2ea599
-b
-2spring-mvc-learn/src/main/webapp/WEB-INF/index.jsp,6/3/638a9d06b992b4ea2fb670d7dc86304c7e1043b9
 a
 1spring-mvc-learn/src/main/resource/log/log4j2.xml,8/2/8241c2e8a15e444c120a8dede9e814931cbbdb19
 7
@@ -29,10 +27,6 @@ H
 spring-mvc-learn/pom.xml,6/5/65e0e1bda3a1def4b6a83f01fc7e57e895820ff6
 `
 0spring-mvc-learn/src/main/webapp/WEB-INF/web.xml,7/1/713798f0d4c0e10ce7bcfa0d72f7df074bb50fa7
-o
-?spring-mvc-learn/src/main/webapp/WEB-INF/applicationContext.xml,4/5/4536ff0c3da990e566be7e4bb87ccf83a8e2319e
-o
-?spring-mvc-learn/src/main/webapp/WEB-INF/spring-mvc-servlet.xml,1/b/1b40c93a44a2d6f699fa4686455626cf5b3b6a76
 F
 java-web-learn/pom.xml,c/5/c5e7b66a68b9b67571b1320b0be9b27ee406f121
 É

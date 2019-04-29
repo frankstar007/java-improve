@@ -15,6 +15,9 @@
         <module>java-web-learn</module>
         <module>java-basic-learn</module>
         <module>java-data-structure</module>
+        <module>java-design-patterns</module>
+      <module>java-improve-service</module>
+      <module>java-frame-learn</module>
     </modules>
 
     <properties>
@@ -99,8 +102,14 @@
         <dependency>
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-log4j12</artifactId>
-            <version>1.7.21</version>
+            <version>1.7.26</version>
         </dependency>
+
+            <dependency>
+                <groupId>org.slf4j</groupId>
+                <artifactId>slf4j-api</artifactId>
+                <version>1.7.26</version>
+            </dependency>
 
         <dependency>
             <groupId>org.apache.logging.log4j</groupId>
@@ -154,11 +163,36 @@
             <version>${spring.version}</version>
         </dependency>
 
+
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-expression</artifactId>
+                <version>${spring.version}</version>
+            </dependency>
+
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-context</artifactId>
             <version>${spring.version}</version>
         </dependency>
+
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-beans</artifactId>
+                <version>${spring.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-test</artifactId>
+                <version>${spring.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-core</artifactId>
+                <version>${spring.version}</version>
+            </dependency>
 
         <dependency>
             <groupId>org.springframework</groupId>
@@ -180,42 +214,30 @@
             </dependency>
 
 
+            <dependency>
+                <groupId>javax.inject</groupId>
+                <artifactId>javax.inject</artifactId>
+                <version>1</version>
+            </dependency>
+
+
     </dependencies>
     </dependencyManagement>
 
 
     <build>
-            <plugins>
-                <plugin>
-                    <groupId>org.apache.maven.plugins</groupId>
-                    <artifactId>maven-compiler-plugin</artifactId>
-                    <configuration>
-                        <source>1.8</source>
-                        <target>1.8</target>
-                    </configuration>
-                </plugin>
-            </plugins>
-            <!--<resources>-->
-                <!--&lt;!&ndash;<resource>&ndash;&gt;-->
-                    <!--&lt;!&ndash;<directory>java-algorithm-learn/src/main/resources</directory>&ndash;&gt;-->
-                        <!--&lt;!&ndash;<includes>&ndash;&gt;-->
-                            <!--&lt;!&ndash;<include>**/*.properties</include>&ndash;&gt;-->
-                            <!--&lt;!&ndash;<include>**/*.xml</include>&ndash;&gt;-->
-                        <!--&lt;!&ndash;</includes>&ndash;&gt;-->
-                    <!--&lt;!&ndash;<filtering>true</filtering>&ndash;&gt;-->
-                <!--&lt;!&ndash;</resource>&ndash;&gt;-->
-
-                <!--&lt;!&ndash;<resource>&ndash;&gt;-->
-                    <!--&lt;!&ndash;<directory>java-algorithm-learn/src/main/java</directory>&ndash;&gt;-->
-                        <!--&lt;!&ndash;<includes>&ndash;&gt;-->
-                            <!--&lt;!&ndash;<include>**/*.properties</include>&ndash;&gt;-->
-                                <!--&lt;!&ndash;<include>**/*.xml</include>&ndash;&gt;-->
-                        <!--&lt;!&ndash;</includes>&ndash;&gt;-->
-                    <!--&lt;!&ndash;<filtering>true</filtering>&ndash;&gt;-->
-                <!--&lt;!&ndash;</resource>&ndash;&gt;-->
-            <!--</resources>-->
-        </build>
-
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.7.0</version>
+                <configuration>
+                    <source>1.8</source>
+                    <target>1.8</target>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 
 
 </project>
