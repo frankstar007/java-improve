@@ -1,5 +1,6 @@
 package com.frankstar.java.frame.learn.mybatis;
 
+import com.frankstar.java.frame.learn.mybatis.entity.UserEntity;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
@@ -30,8 +31,8 @@ public class MyBatisTest {
             SqlSessionFactory sqlSessionFactory = new SqlSessionFactoryBuilder().build(inputStream);
             //获取sqlSessionFactory
             SqlSession sqlSession = sqlSessionFactory.openSession();
-            User user = sqlSession.selectOne("UserMapper.selectUser", 1);
-            System.out.println(user);
+            UserEntity userEntity = sqlSession.selectOne("UserMapper.selectUser", 1);
+            System.out.println(userEntity);
         } catch (Exception e) {
             log.error("", e);
         }

@@ -1,4 +1,4 @@
-package com.frankstar.java.frame.learn.spring;
+package com.frankstar.java.frame.learn;
 
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
