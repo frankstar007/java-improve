@@ -1,6 +1,5 @@
 package com.frankstar.java.learn.frame;
 
-import com.frankstar.java.frame.learn.spring.SpringConfig;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.runner.RunWith;
 import org.springframework.test.context.ContextConfiguration;
@@ -14,7 +13,7 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
  * @Desc :
  */
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(classes = SpringConfig.class)
+@ContextConfiguration(locations = {"classpath:spring/spring-*.xml"})
 @Slf4j
 public abstract class BaseTest {
 

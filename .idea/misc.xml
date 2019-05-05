@@ -43,6 +43,9 @@
     <file type="web" url="file://$PROJECT_DIR$/java-web-learn" />
     <file type="web" url="file://$PROJECT_DIR$/spring-mvc-learn" />
   </component>
+  <component name="JavaScriptSettings">
+    <option name="languageLevel" value="ES6" />
+  </component>
   <component name="MavenProjectsManager">
     <option name="originalFiles">
       <list>

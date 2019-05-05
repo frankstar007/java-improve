@@ -9,6 +9,8 @@ import java.util.Date;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
+
 import org.apache.commons.lang3.math.NumberUtils;
 
 /**
@@ -65,9 +67,6 @@ public class StreamLearn {
 		System.out.println(studentTypeMap.keySet().stream().map(Long::intValue).distinct().collect(Collectors.groupingBy(studentTypeMap::get)));
 
 
-
-
-
 		List<Student> students = Lists.newArrayList();
 		Student student = new Student(2, "frankstar", new Date(2019, 7, 10), "199");
 		Student student1 = new Student(3, "kellystar", new Date(2019, 6, 10), "200");
@@ -75,6 +74,7 @@ public class StreamLearn {
 		students.add(student);
 		students.add(student1);
 		students.add(student2);
+
 
 		Map<Student, StudentType> test = Maps.newHashMap();
 		test.put(student, StudentType.Superior);
@@ -95,6 +95,27 @@ public class StreamLearn {
 //
 //		System.out.println(sort(students));
 //		System.out.println(tranString(nums));
+
+		List<Integer> nums = Lists.newArrayList(2,345,6547,23);
+		Stream.of(nums).findFirst().ifPresent(System.out::println);
+
+		System.out.println(trans(students));
+		System.out.println("------");
+		System.out.println(transMap(students));
+		System.out.println("@@@@@@@@");
+
+		System.out.println(sort(students));
+		Stream.of("d2", "a2", "b1", "b3", "c")
+				.map(s -> {
+					System.out.println("map" + s);
+					return s.toUpperCase();
+				})
+				.anyMatch(s -> {
+					System.out.println("anyMatch" + s);
+					return s.startsWith("A");
+				});
+
+
 
 	}
 
