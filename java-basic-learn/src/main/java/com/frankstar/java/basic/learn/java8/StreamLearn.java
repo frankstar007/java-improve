@@ -1,7 +1,9 @@
 package com.frankstar.java.basic.learn.java8;
 
+import com.frankstar.java.basic.learn.enums.StudentType;
 import com.frankstar.java.basic.learn.example.Student;
 import com.google.common.collect.Lists;
+import com.google.common.collect.Maps;
 import java.util.Comparator;
 import java.util.Date;
 import java.util.List;
@@ -36,12 +38,36 @@ public class StreamLearn {
 			Collectors.toList());
 	}
 
+	public static List<Student> map(Map<StudentType, Student> studentMap) {
+		return studentMap.keySet().stream().map(studentMap::get).collect(Collectors.toList());
+	}
+
+
 	public static Map<Integer, Student> transMap(List<Student> students) {
 		return students.stream().collect(Collectors.toMap(student -> NumberUtils.toInt(student.getCode()), student -> student));
 	}
 
+	public static Map<StudentType, List<Student>> groupBy(Map<Student, StudentType> studentTypeMap) {
+		Map<StudentType, List<Student>> result = studentTypeMap.keySet().
+			stream().collect(Collectors.groupingBy(studentTypeMap::get));
+		return result;
+}
+
 
 	public static void main(String[] args) {
+		Map<Long, StudentType> studentTypeMap = Maps.newHashMap();
+		studentTypeMap.put(1L, StudentType.Junoir);
+		studentTypeMap.put(2L, StudentType.Superior);
+		studentTypeMap.put(3L, StudentType.Senoir);
+		studentTypeMap.put(4L, StudentType.Senoir);
+		studentTypeMap.put(5L, StudentType.Superior);
+
+		System.out.println(studentTypeMap.keySet().stream().map(Long::intValue).distinct().collect(Collectors.groupingBy(studentTypeMap::get)));
+
+
+
+
+
 		List<Student> students = Lists.newArrayList();
 		Student student = new Student(2, "frankstar", new Date(2019, 7, 10), "199");
 		Student student1 = new Student(3, "kellystar", new Date(2019, 6, 10), "200");
@@ -50,15 +76,25 @@ public class StreamLearn {
 		students.add(student1);
 		students.add(student2);
 
-		List<Integer> nums = Lists.newArrayList(2,345,6547,23);
+		Map<Student, StudentType> test = Maps.newHashMap();
+		test.put(student, StudentType.Superior);
+		test.put(student1, StudentType.Superior);
 
-		System.out.println(trans(students));
-		System.out.println("------");
-		System.out.println(transMap(students));
-		System.out.println("@@@@@@@@");
+		test.put(student2, StudentType.Junoir);
+		System.out.println(groupBy(test));
+		System.out.println(groupBy(test).size());
+		System.out.println(test);
+		System.out.println(test.size());
 
-		System.out.println(sort(students));
-		System.out.println(tranString(nums));
+//		List<Integer> nums = Lists.newArrayList(2,345,6547,23);
+//
+//		System.out.println(trans(students));
+//		System.out.println("------");
+//		System.out.println(transMap(students));
+//		System.out.println("@@@@@@@@");
+//
+//		System.out.println(sort(students));
+//		System.out.println(tranString(nums));
 
 	}
 
