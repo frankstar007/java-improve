@@ -19,6 +19,11 @@
       <artifactId>lombok</artifactId>
     </dependency>
 
+    <dependency>
+      <groupId>com.google.guava</groupId>
+      <artifactId>guava</artifactId>
+    </dependency>
+
     <!--日志开始-->
     <dependency>
       <groupId>org.slf4j</groupId>
