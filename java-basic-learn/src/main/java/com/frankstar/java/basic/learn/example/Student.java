@@ -3,6 +3,7 @@ package com.frankstar.java.basic.learn.example;
 import java.util.Date;
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 /**
  * @Author :  frankstar
@@ -13,6 +14,7 @@ import lombok.Data;
  */
 @Data
 @AllArgsConstructor
+@NoArgsConstructor
 public class Student {
 
 	private int age;
