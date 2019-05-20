@@ -16,6 +16,8 @@ import java.util.Date;
 @Data
 public class UserEntity {
 
+    private int id;
+
     /**
      * 用户id
      */

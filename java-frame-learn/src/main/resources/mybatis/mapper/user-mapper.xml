@@ -8,9 +8,10 @@
        resultType：sql语句查询结果集的封装类型,tb_user即为数据库中的表
      -->
     <resultMap id="userEntity" type="com.frankstar.java.frame.learn.mybatis.entity.UserEntity">
-        <id property="userId" column="id"/>
+        <id property="id" column="id"/>
+        <result property="userId" column="user_id"/>
         <result property="userName" column="user_name"/>
-        <result property="age" column="age"/>
+        <result property="age" column="user_age"/>
         <result property="birthday" column="birthday"/>
         <result property="addTime" column="add_time"/>
         <result property="updateTime" column="update_time"/>
