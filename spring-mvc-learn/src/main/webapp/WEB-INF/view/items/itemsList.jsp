@@ -10,6 +10,8 @@
 <head>
     <title>Title</title>
     <p>hello,  frankstar</p>
+    <hr/>
+    <p>${itemsList}</p>
 </head>
 <body>
 
