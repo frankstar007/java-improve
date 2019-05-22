@@ -12,6 +12,6 @@
 </head>
 <body>
 Hello fransktar!
-<h1>${message}</h1>
+<h1>欢迎使用frank star的网站</h1>
 </body>
 </html>

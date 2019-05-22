@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:context="http://www.springframework.org/schema/context"
+  xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+  <!--&lt;!&ndash;数据库配置文件&ndash;&gt;-->
+  <!--<bean id="dbProperty" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">-->
+  <!--<property name="location" value="classpath:db/db.properties"/>-->
+  <!--</bean>-->
+  <context:property-placeholder location="classpath:db/db.properties"/>
+
+
+  <bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
+    <property name="driverClassName" value="${driver}"/>
+    <property name="url" value="${url}"/>
+    <property name="username"  value="${username}"/>
+    <property name="password" value="${password}"/>
+    <!-- 初始化连接大小 -->
+    <property name="initialSize" value="${initialSize}"></property>
+    <!-- 连接池最大数量 -->
+    <property name="maxActive" value="${maxActive}"></property>
+    <!-- 连接池最大空闲 -->
+    <property name="maxIdle" value="${maxIdle}"></property>
+    <!-- 连接池最小空闲 -->
+    <property name="minIdle" value="${minIdle}"></property>
+    <!-- 获取连接最大等待时间 -->
+    <property name="maxWait" value="${maxWait}"></property>
+  </bean>
+
+  <!--spring与mybatis的整合-->
+  <bean id="fixSqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+    <property name="dataSource" ref="dataSource"/>
+    <property name="mapperLocations" value="classpath:spring/mybatis/mapper/*.xml"/>
+  </bean>
+
+  <!--DAO接口所在包名，spring自动查找其类-->
+  <!--http://www.mybatis.org/spring/zh/mappers.html#MapperScannerConfigurer-->
+  <!--注意：如果配置sqlSessionFactory JavaBean时使用如下配置
+  <property name="sqlSessionFactory"-->
+  <!--ref="sqlSessionFactory"></property> 将会出现java.lang.ClassNotFoundException:-->
+  <!--${jdbc.driverClass}异常。MapperScannerConfigurer属性不支持使用了 PropertyPlaceholderConfigurer-->
+  <!--的属性替换,因为会在 Spring容器中之前来加载它。但是,你可以使用 PropertiesFactoryBean和SpEL表达式来作为替代。 注-->
+  <!--意 , 没 有 必 要 去 指 定 SqlSessionFactory或SqlSessionTemplate,因 为 MapperScannerConfigurer-->
+  <!--将会创建 MapperFactoryBean,之后自动装配。但是,如果你使用了一个 以上的 DataSource,那 么自动装配可能会失效 。这种-->
+  <!--情况下,你可 以使用 sqlSessionFactoryBeanName或sqlSessionTemplateBeanName属性来设置正确的 bean名-->
+  <!--称来使用。这就是它如何来配置的,注意 bean的名称是必须的,而不是 bean的引用,因 此,value属性在这里替代通常的 ref:<property-->
+  <!--name="sqlSessionFactoryBeanName" value="sqlSessionFactory" /> &ndash;&gt;-->
+  <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+    <property name="basePackage" value="com.frankstar.spring.mvc.learn.frank.dao"/>
+    <property name="sqlSessionFactoryBeanName" value="fixSqlSessionFactory"/>
+  </bean>
+
+  <!--事务管理-->
+  <bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+    <property name="dataSource" ref="dataSource"/>
+  </bean>
+</beans>

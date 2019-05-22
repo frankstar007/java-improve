@@ -23,7 +23,7 @@ public class HomeController implements Controller {
 		//返回ModelAndView
 		ModelAndView modelAndView = new ModelAndView();
 		//指定视图
-		modelAndView.setViewName("/WEB-INF/view/hello.jsp");
+		modelAndView.setViewName("../hello");
 
 		return modelAndView;
 	}
