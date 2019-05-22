@@ -47,5 +47,16 @@ public class UserServiceImpl implements UserService {
 		return null;
 	}
 
+	@Override
+	public User loadUserByName(String username) {
+		User user = new User();
+		UserEntity userEntity = userDao.loadByName(username);
+		if (userEntity != null) {
+			BeanUtils.copyProperties(userEntity, user);
+			return user;
+		}
+		return null;
+	}
+
 
 }

@@ -11,7 +11,7 @@
     <title>Frank Star Garden</title>
 </head>
 <body>
-    <h3>欢迎【${requestScope.user.userName}】登录</h3>
-    <br/>
+<h3>参数有误哦！</h3>
+<br/>
 </body>
 </html>

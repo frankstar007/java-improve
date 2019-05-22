@@ -5,6 +5,7 @@ import com.frankstar.spring.mvc.learn.frank.service.UserService;
 import com.frankstar.spring.mvc.learn.utils.IdUtil;
 import java.util.Date;
 import javax.annotation.Resource;
+import org.apache.commons.lang3.StringUtils;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -38,24 +39,30 @@ public class UserController {
 		@RequestParam("password") String password,
 		@RequestParam("username") String username) {
 
+		if (StringUtils.isEmpty(username)) return "failure";
+		if (StringUtils.isEmpty(password)) return "failure";
+
 		//创建user对象
 		User user = new User();
 		user.setUserId(IdUtil.getId());
 		user.setUserName(username);
 		user.setBirthday(new Date());
-		user.setPassword(password);
-
-		userService.addUser(user);
-
+		user.setUserPassword(password);
+		//先去查这个用户是否注册过
+		User u = userService.loadUserByName(username);
+		if (u == null) userService.addUser(user);
 		//跳转到登录页面
 		return "loginForm";
 	}
 
-	@RequestMapping("/login")
+	@RequestMapping(value = "/login")
 	public String login(
 		@RequestParam("username") String username,
 		@RequestParam("password") String password,
 		Model model) {
+		if (StringUtils.isEmpty(username)) return "failure";
+		if (StringUtils.isEmpty(password)) return "failure";
+
 		User login = userService.login(username, password);
 		if(login != null) {
 			model.addAttribute("user", login);

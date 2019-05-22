@@ -1,6 +1,7 @@
 package com.frankstar.spring.mvc.learn.frank.dao;
 
 import com.frankstar.spring.mvc.learn.frank.entity.UserEntity;
+import org.apache.ibatis.annotations.Param;
 
 /**
  * @Author :  frankstar
@@ -17,7 +18,25 @@ public interface UserDao {
 	 */
 	UserEntity loadUserById(int userId);
 
-	boolean addUser(UserEntity userEntity);
+	/**
+	 * 注册用户
+	 * @param userEntity
+	 * @return
+	 */
+	boolean addUser(@Param("userEntity") UserEntity userEntity);
 
-	UserEntity loadUser(String username, String password);
+	/**
+	 * 获取登录用户
+	 * @param username
+	 * @param password
+	 * @return
+	 */
+	UserEntity loadUser(@Param("username") String username,@Param("password") String password);
+
+	/**
+	 * 通过登录获取用户
+	 * @param username
+	 * @return
+	 */
+	UserEntity loadByName(@Param("username") String username);
 }

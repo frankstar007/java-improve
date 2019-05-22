@@ -42,20 +42,32 @@
     select
     <include refid="baseColumn"/>
     from frank_user
-    WHERE user_name = #{username}
+    where 1 = 1
+    <if test="username != null">
+      AND user_name = #{username}
+    </if>
+    <if test="password != null">
     AND user_password = #{password}
+    </if>
 
+  </select>
+
+  <select id="loadByName" resultMap="userEntity">
+    SELECT
+    <include refid="baseColumn"/>
+    FROM frank_user
+    WHERE user_name = #{username}
   </select>
 
   <insert id="addUser" parameterType="com.frankstar.spring.mvc.learn.frank.entity.UserEntity">
     INSERT  INTO frank_user
     <include refid="addColumn"/>
     VALUES
-    (#{userId},
-    #{userName},
-    #{age},
-    #{userPassword},
-    #{birthday},
+    (#{userEntity.userId},
+    #{userEntity.userName},
+    #{userEntity.age},
+    #{userEntity.userPassword},
+    #{userEntity.birthday},
     now())
   </insert>
 </mapper>
