@@ -13,6 +13,7 @@
         <module name="java-frame-learn" />
         <module name="java-improve-service" />
         <module name="java-web-learn" />
+        <module name="spring-boot-learn" />
         <module name="spring-mvc-learn" />
       </profile>
     </annotationProcessing>
@@ -25,6 +26,7 @@
       <module name="java-improve" target="1.8" />
       <module name="java-improve-service" target="1.8" />
       <module name="java-web-learn" target="1.8" />
+      <module name="spring-boot-learn" target="1.8" />
       <module name="spring-mvc-learn" target="1.8" />
     </bytecodeTargetLevel>
   </component>
