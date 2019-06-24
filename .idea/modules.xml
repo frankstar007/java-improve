@@ -11,7 +11,6 @@
       <module fileurl="file://$PROJECT_DIR$/java-improve-service/java-improve-service.iml" filepath="$PROJECT_DIR$/java-improve-service/java-improve-service.iml" />
       <module fileurl="file://$PROJECT_DIR$/java-web-learn/java-web-learn.iml" filepath="$PROJECT_DIR$/java-web-learn/java-web-learn.iml" />
       <module fileurl="file://$PROJECT_DIR$/spring-boot-learn/spring-boot-learn.iml" filepath="$PROJECT_DIR$/spring-boot-learn/spring-boot-learn.iml" />
-      <module fileurl="file://$PROJECT_DIR$/spring-boot-learn/spring-boot-learn.iml" filepath="$PROJECT_DIR$/spring-boot-learn/spring-boot-learn.iml" />
       <module fileurl="file://$PROJECT_DIR$/spring-mvc-learn/spring-mvc-learn.iml" filepath="$PROJECT_DIR$/spring-mvc-learn/spring-mvc-learn.iml" />
     </modules>
   </component>
