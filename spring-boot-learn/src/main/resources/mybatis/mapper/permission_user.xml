@@ -25,9 +25,15 @@
     <result property="updateTime" column="update_time"/>
   </resultMap>
 
+  <sql id="baseColumn">
+    id, user_id, login, password, username, address, job, group_id, birthday, city_id, city_name, district, province, street_address, state, type, last_login_date, add_time, update_time
+  </sql>
+
   <!-- 根据账号来获取用户信息 -->
-  <select id="findByLogin" parameterType="java.lang.String" resultMap="UserLoginMap">
-    select u.*,ur.id as user_role_id,ur.name,ur.role_name from user u inner join user_associate_role uar on u.id = uar.user_id inner join user_role ur on uar.role_id = ur.id where u.login = #{login}
+  <select id="findByUserLogin" resultMap="UserLoginMap">
+    SELECT baseColumn FROM frankstart_user
+    WHERE user_id = #{userId}
+    AND login = #{login}
   </select>
 
 </mapper>

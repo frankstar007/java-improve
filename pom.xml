@@ -37,6 +37,12 @@
                 <version>${spring.boot.starter}</version>
             </dependency>
 
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-web</artifactId>
+                <version>${spring.boot.starter}</version>
+            </dependency>
+
             <!-- 集成Druid数据库连接池和监控 -->
             <dependency>
                 <groupId>com.alibaba</groupId>
@@ -69,6 +75,20 @@
                 <version>${spring.boot.starter}</version>
             </dependency>
 
+            <!-- 添加对spring-data-rest的支持 -->
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-data-rest</artifactId>
+                <version>${spring.boot.starter}</version>
+            </dependency>
+
+            <!-- 添加对spring-jpa的支持 -->
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-data-jpa</artifactId>
+                <version>${spring.boot.starter}</version>
+            </dependency>
+
             <!-- 添加对websocket的支持 -->
             <dependency>
                 <groupId>org.springframework.boot</groupId>
@@ -87,6 +107,19 @@
                 <artifactId>spring-boot-starter-tomcat</artifactId>
                 <version>1.3.5.RELEASE</version>
                 <scope>provided</scope>
+            </dependency>
+
+            <!-- 添加对spring-cache的支持 -->
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-cache</artifactId>
+                <version>${spring.boot.starter}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>net.sf.ehcache</groupId>
+                <artifactId>ehcache</artifactId>
+                <version>2.10.6</version>
             </dependency>
 
 

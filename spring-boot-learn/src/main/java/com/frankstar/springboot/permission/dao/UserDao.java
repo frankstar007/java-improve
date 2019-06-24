@@ -1,5 +1,8 @@
 package com.frankstar.springboot.permission.dao;
 
+import com.frankstar.springboot.permission.enity.UserEntity;
+import org.apache.ibatis.annotations.Param;
+
 /**
  * @Author :  frankstar
  * @AddTime :  2019/6/21
@@ -8,5 +11,7 @@ package com.frankstar.springboot.permission.dao;
  * @Desc :
  */
 public interface UserDao {
+
+    UserEntity findByUserLogin(@Param("userId") int userId, @Param("login") String login);
 
 }
