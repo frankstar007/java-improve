@@ -18,6 +18,7 @@
         <module>java-design-patterns</module>
       <module>java-improve-service</module>
       <module>java-frame-learn</module>
+      <module>spring-statemachine-learn</module>
     </modules>
 
     <properties>
@@ -37,12 +38,44 @@
                 <version>${spring.boot.starter}</version>
             </dependency>
 
+
+            <dependency>
+                <groupId>org.springframework.statemachine</groupId>
+                <artifactId>spring-statemachine-core</artifactId>
+                <version>1.2.1.RELEASE</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot</artifactId>
+                <version>2.1.6.RELEASE</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter</artifactId>
+                <version>${spring.boot.starter}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.statemachine</groupId>
+                <artifactId>spring-statemachine-test</artifactId>
+                <version>1.2.5.RELEASE</version>
+                <scope>test</scope>
+            </dependency>
+
             <!-- 集成Druid数据库连接池和监控 -->
             <dependency>
                 <groupId>com.alibaba</groupId>
                 <artifactId>druid-spring-boot-starter</artifactId>
                 <version>1.1.3</version>
             </dependency>
+
+            <dependency>
+                <groupId>com.google.code.gson</groupId>
+                <artifactId>gson</artifactId>
+                <version>2.8.6</version>
+            </dependency>
+
+
             <!-- 引入mapstruct的支持 -->
             <dependency>
                 <groupId>org.mapstruct</groupId>
