@@ -1,5 +1,7 @@
 package com.frankstar.leetcode.递归;
 
+import com.google.gson.Gson;
+
 /**
  * @Author :  frankstar
  * @AddTime :  2020/3/2
@@ -12,20 +14,27 @@ public class 递归_反转链表 {
 	class ListNode {
 		int val;
 		ListNode next;
+
+		public String toString(ListNode listNode) {
+			Gson gson = new Gson();
+			return gson.toJson(listNode);
+		}
+
 		ListNode(int x) {
 			val = x;
 		}
 	}
 
 	public ListNode swapPairs(ListNode head) {
-		return swap(head, head.next);
+		if (head == null) return null;
+		if (head.next == null) return head;
+		ListNode p = head.next;
+		head.next = swapPairs(head.next.next);
+		p.next = head;
+		return p;
 
 	}
 
-	private ListNode swap(ListNode head, ListNode next) {
-		ListNode p = head;
-		ListNode q = head.next;
 
 
-	}
 }
