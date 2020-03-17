@@ -2,6 +2,7 @@ package com.frankstar.leetcode.二叉树;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Stack;
 
 /**
  * @Author :  frankstar
@@ -12,6 +13,11 @@ import java.util.List;
  */
 public class 中序遍历二叉树 {
 
+	/**
+	 * 递归方法
+	 * @param root
+	 * @return
+	 */
 	public List<Integer> inorderTraversal(TreeNode root) {
 		List<Integer> result = new ArrayList<>();
 		if (root == null) return result;
@@ -22,5 +28,32 @@ public class 中序遍历二叉树 {
 		result.addAll(right);
 
 		return result;
+	}
+
+
+	/**
+	 * 非递归中序遍历
+	 * @param root
+	 * @return
+	 */
+	public List<Integer> diguiInOrder(TreeNode root) {
+		Stack<TreeNode> stack = new Stack<>();
+		TreeNode newR = root;
+		stack.push(root);
+		List<Integer> result = new ArrayList<>();
+		while (!stack.isEmpty() || newR != null) {
+			if(newR != null) {
+				//入栈
+				stack.push(newR);
+				newR = newR.left;
+			} else {
+				TreeNode tmp = stack.pop();
+				result.add(tmp.val);
+				newR = tmp.right;
+			}
+
+		}
+		return result;
+
 	}
 }
