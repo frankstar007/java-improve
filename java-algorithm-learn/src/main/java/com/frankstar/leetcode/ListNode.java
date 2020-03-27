@@ -1,4 +1,4 @@
-package com.frankstar.leetcode.链表;
+package com.frankstar.leetcode;
 
 /**
  * @Author :  frankstar
@@ -8,11 +8,11 @@ package com.frankstar.leetcode.链表;
  * @Desc :
  */
 public class ListNode {
-	int val;
+	public int val;
 
-	ListNode next;
+	public ListNode next;
 
-	ListNode (int x) {
+	public ListNode (int x) {
 		this.val = x;
 		next = null;
 	}

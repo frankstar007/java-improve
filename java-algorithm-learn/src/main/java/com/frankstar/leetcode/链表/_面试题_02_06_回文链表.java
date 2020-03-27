@@ -1,5 +1,6 @@
 package com.frankstar.leetcode.链表;
 
+import com.frankstar.leetcode.ListNode;
 import java.util.Stack;
 
 /**

@@ -1,5 +1,7 @@
 package com.frankstar.leetcode.链表;
 
+import com.frankstar.leetcode.ListNode;
+
 /**
  * @Author :  frankstar
  * @AddTime :  2020/3/22
