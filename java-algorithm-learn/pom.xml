@@ -20,6 +20,10 @@
           <artifactId>mybatis</artifactId>
         </dependency>
 
+        <dependency>
+          <groupId>com.google.guava</groupId>
+          <artifactId>guava</artifactId>
+        </dependency>
 
         <dependency>
           <groupId>com.google.code.gson</groupId>
@@ -34,6 +38,10 @@
         <dependency>
           <groupId>junit</groupId>
           <artifactId>junit</artifactId>
+        </dependency>
+        <dependency>
+          <groupId>com.google.guava</groupId>
+          <artifactId>guava</artifactId>
         </dependency>
 
       </dependencies>

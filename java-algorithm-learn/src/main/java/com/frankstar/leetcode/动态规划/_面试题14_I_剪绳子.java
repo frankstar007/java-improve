@@ -12,21 +12,17 @@ public class _面试题14_I_剪绳子 {
 
 	public int cuttingRope(int n) {
 		int opt[] = new int[58];
+		opt[1] = 1;
+		opt[2] = 1;
 
-		opt[2] = (int) Math.pow(n/2, 2);
+		for (int i = 3; i<=n; i++) {
 
-		for (int i = 2; i<n; i++) {
-			opt[i] = (int) Math.max(opt[i-1], Math.pow(n/(i), i-1) * (n - (i-1) * n/i));
-		}
-
-		int max = Integer.MIN_VALUE;
-		for (int i= 2; i< opt.length; i++) {
-			if (opt[i] >= max) {
-				max = opt[i];
+			for (int k = 2; k<=i-1; k++) {
+				opt[i] = Math.max(opt[i], Math.max(k * opt[i-k], k*(i-k)));
 			}
 		}
 
-		return max;
+		return opt[n];
 
 	}
 
