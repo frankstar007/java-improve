@@ -20,7 +20,11 @@ public class PrefixTable {
     public int[] prefixTable(String pattern) {
         int[] nextVal = new int[pattern.length()];
         nextVal[0] = -1;
-        for (int i= 1; i<  )
+        for (int i= 1; i<nextVal.length; i++) {
+
+        }
+
+        return nextVal;
 
     }
 }
