@@ -12,35 +12,42 @@ public class x的平方根 {
 	public int mySqrt(int x) {
 		if (x == 0 || x==1) return x;
 		int i =  1;
-		int square = i * i;
-		while (square != x) {
-			int tmp = square;
-			if (square > x) {
-				i = i-1;
-			} else {
-				i = i+1;
-			}
-			square = i * i;
-			if
-		}
 		while(i>=1 && i <= x) {
-			int square = i * i;
-			if (square == x) return i;
-			if (square < x) {
-				square = (i +1) * (i+1);
-				if (tmp == x) return i+1;
-				if (tmp > x) return i;
-				i = i+1;
-			}else {
-				int tmp = (i -1) * (i-1);
-				if (tmp <= x) return i-1;
-				i = i-1;
+			int left = x /i;
+			if (left == i) return i;
+			if (left > i) {
+				int j = i+1;
+				int tmp = x/j;
+				if (tmp == j) return j;
+				if (tmp < j) return i;
+				i=j;
+			} else {
+				int j = i-1;
+				int tmp = x/j;
+				if (tmp >= j) return j;
+				i = j;
 			}
-
 		}
 
 		return 0;
 	}
+
+
+	public int standardSqrt(int x) {
+		int left = 0, right = x / 2 + 1;
+		while (left <= right) {
+			long mid = left + (right - left) / 2;
+			if (mid * mid == x) {
+				return (int) mid;
+			} else if (mid * mid < x) {
+				left = (int) (mid + 1);
+			} else {
+				right = (int) (mid - 1);
+			}
+		}
+		return right;
+	}
+
 
 
 	public static void main(String[] args) {
