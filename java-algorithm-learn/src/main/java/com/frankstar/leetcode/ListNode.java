@@ -12,9 +12,12 @@ public class ListNode {
 
 	public ListNode next;
 
+	public ListNode random;
+
 	public ListNode (int x) {
 		this.val = x;
 		next = null;
+		random = null;
 	}
 
 	@Override
