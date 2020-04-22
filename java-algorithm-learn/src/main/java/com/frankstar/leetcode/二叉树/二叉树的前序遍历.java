@@ -2,6 +2,7 @@ package com.frankstar.leetcode.二叉树;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Stack;
 
 /**
  * @Author :  frankstar
@@ -12,7 +13,7 @@ import java.util.List;
  */
 public class 二叉树的前序遍历 {
 
-	class Solution {
+
 		public List<Integer> preorderTraversal(TreeNode root) {
 			List<Integer> result = new ArrayList<>();
 			if (root == null) return result;
@@ -25,5 +26,28 @@ public class 二叉树的前序遍历 {
 			return result;
 
 		}
-	}
+
+
+		public List<Integer> loopPreorder(TreeNode root) {
+			List<Integer> result = new ArrayList<>();
+			if (root == null) return result;
+			Stack<TreeNode> stack = new Stack();
+			stack.add(root);
+			while (!stack.isEmpty()) {
+				TreeNode cur = stack.pop();
+				result.add(cur.val);
+
+				if (cur.right != null) {
+					stack.push(cur.right);
+				}
+
+				if (cur.left != null) {
+					stack.push(cur.left);
+				}
+			}
+
+			return result;
+
+		}
+
 }

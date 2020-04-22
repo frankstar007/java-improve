@@ -1,7 +1,9 @@
 package com.frankstar.leetcode.二叉树;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
+import java.util.Stack;
 
 /**
  * @Author :  frankstar
@@ -24,4 +26,24 @@ public class 二叉树的后序遍历 {
 		return result;
 	}
 
+
+	public List<Integer> loopPostOrder(TreeNode root) {
+		LinkedList<Integer> result = new LinkedList<>();
+		if (root == null) return result;
+		Stack<TreeNode> stack = new Stack<>();
+		stack.add(root);
+		while (!stack.isEmpty()) {
+			TreeNode cur = stack.pop();
+			result.addFirst(cur.val);
+
+			if (cur.left != null) {
+				stack.push(cur.left);
+			}
+			if (cur.right != null) {
+				stack.push(cur.right);
+			}
+		}
+
+		return result;
+	}
 }
