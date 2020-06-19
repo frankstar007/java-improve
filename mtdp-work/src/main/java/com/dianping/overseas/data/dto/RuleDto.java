@@ -1,7 +1,7 @@
 package com.dianping.overseas.data.dto;
 
 import java.io.Serializable;
-import java.util.List;
+import java.util.Date;
 import lombok.Data;
 
 /**
@@ -13,54 +13,82 @@ import lombok.Data;
  */
 @Data
 public class RuleDto implements Serializable {
-
-	/**
-	 * 自增id
-	 */
-	private int id;
 	/**
 	 * 规则id
 	 */
-	private int ruleId;
+	private long ruleId;
 
 	/**
-	 * 数据来源
+	 * 规则名称与描述
 	 */
-	private int dataOrigin;
+	private String ruleName;
+
 
 	/**
-	 * 数据应用
+	 * 数据来源类型
+	 * 1. cat
+	 * 2. radar
 	 */
-	private String appKey;
+	private int dataOriginType;
+
+	/**
+	 * cat
+	 * radar
+	 */
+	private String dataOrigin;
 
 	/**
 	 * 数据类型
+	 * 1.catEvent
+	 * 2.catBusiness
+	 * 3.catTransaction
+	 * 4.catApi
 	 */
 	private int dataType;
 
 	/**
+	 * 应用名称
+	 */
+	private String appKey;
+
+	/**
 	 * 时间维度
+	 * 1. 实时
+	 * 2. 秒
+	 * 3. 分
+	 * 4. 时
+	 * 5. 天
+	 * 6. 周
+	 * 7. 月
 	 */
 	private int timeScale;
 
-	/**
-	 * 数据指标
-	 */
-	private List<String> tags;
 
 	/**
-	 * 指标公式
+	 * 必选参数
 	 */
-	private String formula;
+	private String params;
 
 	/**
-	 * 规则描述
-	 */
-	private String desc;
-
-	/**
-	 * 操作人
+	 * 操作人mis号
 	 */
 	private String operator;
 
+	/**
+	 * 1 线下
+	 * 2 审核
+	 * 3 线上
+	 */
+	private int status;
+
+	/**
+	 * 新增时间
+	 */
+	private Date addTime;
+
+
+	/**
+	 * 除了参数外的key
+	 */
+	private String ruleKey;
 }
