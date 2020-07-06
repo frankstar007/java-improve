@@ -41,6 +41,7 @@
   <component name="FrameworkDetectionExcludesConfiguration">
     <file type="web" url="file://$PROJECT_DIR$/java-improve-service" />
     <file type="web" url="file://$PROJECT_DIR$/java-web-learn" />
+    <file type="web" url="file://$PROJECT_DIR$/spring-boot-deep" />
     <file type="web" url="file://$PROJECT_DIR$/spring-boot-learn" />
     <file type="web" url="file://$PROJECT_DIR$/spring-mvc-learn" />
   </component>
@@ -52,6 +53,7 @@
       <list>
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/spring-boot-learn/pom.xml" />
+        <option value="$PROJECT_DIR$/quick-spring-boot/pom.xml" />
       </list>
     </option>
   </component>

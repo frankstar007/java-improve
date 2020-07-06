@@ -3,6 +3,12 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.2.7.RELEASE</version>
+        <relativePath/> <!-- lookup parent from repository -->
+    </parent>
 
     <groupId>com.frankstar</groupId>
     <artifactId>java-improve</artifactId>
@@ -16,9 +22,11 @@
         <module>java-basic-learn</module>
         <module>java-data-structure</module>
         <module>java-design-patterns</module>
-      <module>java-improve-service</module>
-      <module>java-frame-learn</module>
-      <module>spring-statemachine-learn</module>
+        <module>java-improve-service</module>
+        <module>java-frame-learn</module>
+        <module>spring-statemachine-learn</module>
+        <module>spring-boot-deep</module>
+      <module>mtdp-work</module>
     </modules>
 
     <properties>
@@ -27,34 +35,36 @@
         <java.version>1.8</java.version>
         <spring.version>5.2.4.RELEASE</spring.version>
         <org.mapstruct.version>1.1.0.Final</org.mapstruct.version>
-        <spring.boot.starter>2.1.6.RELEASE</spring.boot.starter>
+        <spring.boot.version>2.2.7.RELEASE</spring.boot.version>
     </properties>
 
     <dependencyManagement>
         <dependencies>
-            <dependency>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-starter-parent</artifactId>
-                <version>${spring.boot.starter}</version>
-            </dependency>
-
-
-            <dependency>
-                <groupId>org.springframework.statemachine</groupId>
-                <artifactId>spring-statemachine-core</artifactId>
-                <version>1.2.1.RELEASE</version>
-            </dependency>
 
             <dependency>
                 <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot</artifactId>
-                <version>2.1.6.RELEASE</version>
+                <artifactId>spring-boot-starter-web</artifactId>
+                <version>${spring.boot.version}</version>
             </dependency>
+
+            <!--<dependency>-->
+                <!--<groupId>org.springframework.boot</groupId>-->
+                <!--<artifactId>spring-boot-starter</artifactId>-->
+                <!--<version>${spring.boot.version}</version>-->
+            <!--</dependency>-->
+
             <dependency>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-starter</artifactId>
-                <version>${spring.boot.starter}</version>
+                <version>${spring.boot.version}</version>
             </dependency>
+
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-autoconfigure</artifactId>
+                <version>${spring.boot.version}</version>
+            </dependency>
+
             <dependency>
                 <groupId>org.springframework.statemachine</groupId>
                 <artifactId>spring-statemachine-test</artifactId>
@@ -99,20 +109,20 @@
             <dependency>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-starter-thymeleaf</artifactId>
-                <version>${spring.boot.starter}</version>
+                <version>${spring.boot.version}</version>
             </dependency>
 
             <!-- 添加对websocket的支持 -->
             <dependency>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-starter-websocket</artifactId>
-                <version>${spring.boot.starter}</version>
+                <version>${spring.boot.version}</version>
             </dependency>
 
             <dependency>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-starter-test</artifactId>
-                <version>${spring.boot.starter}</version>
+                <version>${spring.boot.version}</version>
             </dependency>
 
             <dependency>
@@ -126,7 +136,7 @@
             <dependency>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-devtools</artifactId>
-                <version>${spring.boot.starter}</version>
+                <version>${spring.boot.version}</version>
             </dependency>
 
             <dependency>

@@ -13,6 +13,9 @@
         <module name="java-frame-learn" />
         <module name="java-improve-service" />
         <module name="java-web-learn" />
+        <module name="mtdp-work" />
+        <module name="quick-spring-boot" />
+        <module name="spring-boot-deep" />
         <module name="spring-boot-learn" />
         <module name="spring-mvc-learn" />
         <module name="spring-statemachine-learn" />
@@ -27,6 +30,9 @@
       <module name="java-improve" target="1.8" />
       <module name="java-improve-service" target="1.8" />
       <module name="java-web-learn" target="1.8" />
+      <module name="mtdp-work" target="1.8" />
+      <module name="quick-spring-boot" target="1.8" />
+      <module name="spring-boot-deep" target="1.5" />
       <module name="spring-boot-learn" target="1.8" />
       <module name="spring-mvc-learn" target="1.8" />
       <module name="spring-statemachine-learn" target="1.8" />

@@ -32,6 +32,12 @@
       <artifactId>guava</artifactId>
     </dependency>
 
+    <dependency>
+      <groupId>com.dianping</groupId>
+      <artifactId>poseidon-common-utils</artifactId>
+      <version>0.2.65</version>
+    </dependency>
+
 
 
     <dependency>

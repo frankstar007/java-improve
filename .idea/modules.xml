@@ -10,6 +10,9 @@
       <module fileurl="file://$PROJECT_DIR$/java-improve.iml" filepath="$PROJECT_DIR$/java-improve.iml" />
       <module fileurl="file://$PROJECT_DIR$/java-improve-service/java-improve-service.iml" filepath="$PROJECT_DIR$/java-improve-service/java-improve-service.iml" />
       <module fileurl="file://$PROJECT_DIR$/java-web-learn/java-web-learn.iml" filepath="$PROJECT_DIR$/java-web-learn/java-web-learn.iml" />
+      <module fileurl="file://$PROJECT_DIR$/mtdp-work/mtdp-work.iml" filepath="$PROJECT_DIR$/mtdp-work/mtdp-work.iml" />
+      <module fileurl="file://$PROJECT_DIR$/quick-spring-boot/quick-spring-boot.iml" filepath="$PROJECT_DIR$/quick-spring-boot/quick-spring-boot.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring-boot-deep/spring-boot-deep.iml" filepath="$PROJECT_DIR$/spring-boot-deep/spring-boot-deep.iml" />
       <module fileurl="file://$PROJECT_DIR$/spring-boot-learn/spring-boot-learn.iml" filepath="$PROJECT_DIR$/spring-boot-learn/spring-boot-learn.iml" />
       <module fileurl="file://$PROJECT_DIR$/spring-mvc-learn/spring-mvc-learn.iml" filepath="$PROJECT_DIR$/spring-mvc-learn/spring-mvc-learn.iml" />
       <module fileurl="file://$PROJECT_DIR$/spring-statemachine-learn/spring-statemachine-learn.iml" filepath="$PROJECT_DIR$/spring-statemachine-learn/spring-statemachine-learn.iml" />
