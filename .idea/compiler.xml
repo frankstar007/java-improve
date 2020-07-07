@@ -32,10 +32,26 @@
       <module name="java-web-learn" target="1.8" />
       <module name="mtdp-work" target="1.8" />
       <module name="quick-spring-boot" target="1.8" />
-      <module name="spring-boot-deep" target="1.5" />
+      <module name="spring-boot-deep" target="1.8" />
       <module name="spring-boot-learn" target="1.8" />
       <module name="spring-mvc-learn" target="1.8" />
       <module name="spring-statemachine-learn" target="1.8" />
     </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="java-algorithm-learn" options="-parameters" />
+      <module name="java-basic-learn" options="-parameters" />
+      <module name="java-data-structure" options="-parameters" />
+      <module name="java-design-patterns" options="-parameters" />
+      <module name="java-frame-learn" options="-parameters" />
+      <module name="java-improve-service" options="-parameters" />
+      <module name="java-web-learn" options="-parameters" />
+      <module name="mtdp-work" options="-parameters" />
+      <module name="spring-boot-deep" options="-parameters" />
+      <module name="spring-boot-learn" options="-parameters" />
+      <module name="spring-mvc-learn" options="-parameters" />
+      <module name="spring-statemachine-learn" options="-parameters" />
+    </option>
   </component>
 </project>
