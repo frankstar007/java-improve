@@ -25,7 +25,8 @@ public class DateUtil {
 	public static long  getTime(String timeStr) {
 
 		try {
-			long time = DateUtils.parseDate(timeStr, new String[]{pattern1, pattern2, pattern3, pattern4}).getTime();
+			long time = DateUtils
+				.parseDate(timeStr, new String[]{pattern1, pattern2, pattern3, pattern4}).getTime();
 			return time;
 		} catch (Exception e) {
 			log.error("", e);
@@ -33,5 +34,4 @@ public class DateUtil {
 
 		return 0;
 	}
-
 }
