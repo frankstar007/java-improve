@@ -20,6 +20,13 @@
       <artifactId>spring-boot-starter-web</artifactId>
     </dependency>
 
+
+
+    <dependency>
+      <groupId>io.netty</groupId>
+      <artifactId>netty-example</artifactId>
+    </dependency>
+
     <dependency>
       <groupId>org.projectlombok</groupId>
       <artifactId>lombok</artifactId>

@@ -6,6 +6,7 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="business-extention-framework" />
         <module name="java-algorithm-learn" />
         <module name="java-basic-learn" />
         <module name="java-data-structure" />
@@ -16,11 +17,13 @@
         <module name="quick-spring-boot" />
         <module name="spring-boot-deep" />
         <module name="spring-boot-learn" />
+        <module name="spring-flowable" />
         <module name="spring-mvc-learn" />
         <module name="spring-statemachine-learn" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="business-extention-framework" target="1.8" />
       <module name="extension-design" target="1.8" />
       <module name="java-algorithm-learn" target="1.8" />
       <module name="java-basic-learn" target="1.8" />
@@ -32,8 +35,9 @@
       <module name="java-web-learn" target="1.8" />
       <module name="mtdp-work" target="1.8" />
       <module name="quick-spring-boot" target="1.8" />
-      <module name="spring-boot-deep" target="1.5" />
+      <module name="spring-boot-deep" target="1.8" />
       <module name="spring-boot-learn" target="1.8" />
+      <module name="spring-flowable" target="1.8" />
       <module name="spring-mvc-learn" target="1.8" />
       <module name="spring-statemachine-learn" target="1.8" />
     </bytecodeTargetLevel>
