@@ -29,6 +29,7 @@
       <module>mtdp-work</module>
         <module>spring-flowable</module>
       <module>business-extention-framework</module>
+        <module>mtdp-grocery-product</module>
     </modules>
 
     <properties>
@@ -44,9 +45,28 @@
         <dependencies>
 
             <dependency>
+                <groupId>com.dianping</groupId>
+                <artifactId>overseas-product-api</artifactId>
+                <version>0.0.1-SNAPSHOT</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.sankuai.grocery.product.udc</groupId>
+                <artifactId>grocery-product-udc-client</artifactId>
+                <version>0.0.2</version>
+            </dependency>
+
+            <dependency>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-starter-web</artifactId>
                 <version>${spring.boot.version}</version>
+            </dependency>
+
+
+            <dependency>
+                <groupId>io.swagger</groupId>
+                <artifactId>swagger-annotations</artifactId>
+                <version>1.5.21</version>
             </dependency>
 
             <dependency>

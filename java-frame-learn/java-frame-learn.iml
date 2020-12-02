@@ -51,8 +51,8 @@
     <orderEntry type="library" name="Maven: io.netty:netty-buffer:4.1.49.Final" level="project" />
     <orderEntry type="library" name="Maven: io.netty:netty-resolver:4.1.49.Final" level="project" />
     <orderEntry type="library" name="Maven: io.netty:netty-transport-sctp:4.1.49.Final" level="project" />
-    <orderEntry type="library" name="Maven: io.netty:netty-handler:4.1.49.Final" level="project" />
     <orderEntry type="library" name="Maven: io.netty:netty-codec:4.1.49.Final" level="project" />
+    <orderEntry type="library" name="Maven: io.netty:netty-handler:4.1.49.Final" level="project" />
     <orderEntry type="library" name="Maven: io.netty:netty-handler-proxy:4.1.49.Final" level="project" />
     <orderEntry type="library" name="Maven: io.netty:netty-codec-http:4.1.49.Final" level="project" />
     <orderEntry type="library" name="Maven: io.netty:netty-codec-memcache:4.1.49.Final" level="project" />
@@ -66,7 +66,9 @@
     <orderEntry type="library" scope="RUNTIME" name="Maven: org.javassist:javassist:3.17.1-GA" level="project" />
     <orderEntry type="library" name="Maven: com.yammer.metrics:metrics-core:2.2.0" level="project" />
     <orderEntry type="library" name="Maven: io.netty:netty-transport-udt:4.1.49.Final" level="project" />
+    <orderEntry type="library" name="Maven: com.barchart.udt:barchart-udt-bundle:2.3.0" level="project" />
     <orderEntry type="library" name="Maven: io.netty:netty-transport-rxtx:4.1.49.Final" level="project" />
+    <orderEntry type="library" name="Maven: org.rxtx:rxtx:2.1.7" level="project" />
     <orderEntry type="library" name="Maven: ch.qos.logback:logback-classic:1.2.3" level="project" />
     <orderEntry type="library" name="Maven: ch.qos.logback:logback-core:1.2.3" level="project" />
     <orderEntry type="library" name="Maven: org.projectlombok:lombok:1.16.10" level="project" />

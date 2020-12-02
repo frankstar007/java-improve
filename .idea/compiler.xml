@@ -14,6 +14,7 @@
         <module name="java-frame-learn" />
         <module name="java-improve-service" />
         <module name="java-web-learn" />
+        <module name="mtdp-grocery-product" />
         <module name="quick-spring-boot" />
         <module name="spring-boot-deep" />
         <module name="spring-boot-learn" />
@@ -33,6 +34,7 @@
       <module name="java-improve" target="1.8" />
       <module name="java-improve-service" target="1.8" />
       <module name="java-web-learn" target="1.8" />
+      <module name="mtdp-grocery-product" target="1.8" />
       <module name="mtdp-work" target="1.8" />
       <module name="quick-spring-boot" target="1.8" />
       <module name="spring-boot-deep" target="1.8" />
