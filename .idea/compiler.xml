@@ -8,6 +8,7 @@
         <outputRelativeToContentRoot value="true" />
         <module name="java-algorithm-learn" />
         <module name="java-basic-learn" />
+        <module name="java-concurrent" />
         <module name="java-data-structure" />
         <module name="java-design-patterns" />
         <module name="java-frame-learn" />
@@ -24,6 +25,7 @@
     <bytecodeTargetLevel>
       <module name="java-algorithm-learn" target="1.8" />
       <module name="java-basic-learn" target="1.8" />
+      <module name="java-concurrent" target="1.8" />
       <module name="java-data-structure" target="1.8" />
       <module name="java-design-patterns" target="1.8" />
       <module name="java-frame-learn" target="1.8" />
@@ -42,12 +44,14 @@
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="java-algorithm-learn" options="-parameters" />
       <module name="java-basic-learn" options="-parameters" />
+      <module name="java-concurrent" options="-parameters" />
       <module name="java-data-structure" options="-parameters" />
       <module name="java-design-patterns" options="-parameters" />
       <module name="java-frame-learn" options="-parameters" />
       <module name="java-improve-service" options="-parameters" />
       <module name="java-web-learn" options="-parameters" />
       <module name="mtdp-work" options="-parameters" />
+      <module name="quick-spring-boot" options="-parameters" />
       <module name="spring-boot-deep" options="-parameters" />
       <module name="spring-boot-learn" options="-parameters" />
       <module name="spring-mvc-learn" options="-parameters" />

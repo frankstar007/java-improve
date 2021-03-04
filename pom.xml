@@ -27,6 +27,7 @@
         <module>spring-statemachine-learn</module>
         <module>spring-boot-deep</module>
       <module>mtdp-work</module>
+        <module>java-concurrent</module>
     </modules>
 
     <properties>
