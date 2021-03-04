@@ -12,4 +12,13 @@
   <artifactId>java-data-structure</artifactId>
 
 
+  <dependencies>
+    <dependency>
+      <groupId>com.dianping</groupId>
+      <artifactId>overseas-product-api</artifactId>
+    </dependency>
+
+  </dependencies>
+
+
 </project>

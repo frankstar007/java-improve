@@ -6,6 +6,7 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="business-extention-framework" />
         <module name="java-algorithm-learn" />
         <module name="java-basic-learn" />
         <module name="java-concurrent" />
@@ -14,15 +15,18 @@
         <module name="java-frame-learn" />
         <module name="java-improve-service" />
         <module name="java-web-learn" />
-        <module name="mtdp-work" />
+        <module name="mtdp-grocery-product" />
         <module name="quick-spring-boot" />
         <module name="spring-boot-deep" />
         <module name="spring-boot-learn" />
+        <module name="spring-flowable" />
         <module name="spring-mvc-learn" />
         <module name="spring-statemachine-learn" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="business-extention-framework" target="1.8" />
+      <module name="extension-design" target="1.8" />
       <module name="java-algorithm-learn" target="1.8" />
       <module name="java-basic-learn" target="1.8" />
       <module name="java-concurrent" target="1.8" />
@@ -32,14 +36,17 @@
       <module name="java-improve" target="1.8" />
       <module name="java-improve-service" target="1.8" />
       <module name="java-web-learn" target="1.8" />
+      <module name="mtdp-grocery-product" target="1.8" />
       <module name="mtdp-work" target="1.8" />
       <module name="quick-spring-boot" target="1.8" />
       <module name="spring-boot-deep" target="1.8" />
       <module name="spring-boot-learn" target="1.8" />
+      <module name="spring-flowable" target="1.8" />
       <module name="spring-mvc-learn" target="1.8" />
       <module name="spring-statemachine-learn" target="1.8" />
     </bytecodeTargetLevel>
   </component>
+<<<<<<< HEAD
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="java-algorithm-learn" options="-parameters" />
@@ -58,4 +65,6 @@
       <module name="spring-statemachine-learn" options="-parameters" />
     </option>
   </component>
+=======
+>>>>>>> 0217c4c26f41de1d8dd77007303e69074a324c9c
 </project>
