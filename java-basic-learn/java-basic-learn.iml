@@ -16,7 +16,11 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
+<<<<<<< HEAD
+    <orderEntry type="library" name="Maven: com.dianping:poseidon-common-base:0.2.87" level="project" />
+=======
     <orderEntry type="library" name="Maven: com.dianping:poseidon-common-base:0.2.92-SNAPSHOT" level="project" />
+>>>>>>> 0217c4c26f41de1d8dd77007303e69074a324c9c
     <orderEntry type="library" name="Maven: org.projectlombok:lombok:1.16.10" level="project" />
     <orderEntry type="library" name="Maven: com.google.code.gson:gson:2.8.6" level="project" />
     <orderEntry type="library" name="Maven: com.google.guava:guava:27.0.1-jre" level="project" />

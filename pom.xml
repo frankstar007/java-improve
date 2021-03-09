@@ -27,9 +27,13 @@
         <module>spring-statemachine-learn</module>
         <module>spring-boot-deep</module>
       <module>mtdp-work</module>
+<<<<<<< HEAD
+        <module>java-concurrent</module>
+=======
         <module>spring-flowable</module>
       <module>business-extention-framework</module>
         <module>mtdp-grocery-product</module>
+>>>>>>> 0217c4c26f41de1d8dd77007303e69074a324c9c
     </modules>
 
     <properties>
