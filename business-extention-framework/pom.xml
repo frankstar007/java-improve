@@ -10,14 +10,12 @@
   <modelVersion>4.0.0</modelVersion>
 
   <artifactId>business-extention-framework</artifactId>
+  <packaging>jar</packaging>
 
 
 
   <dependencies>
-      <dependency>
-        <groupId>com.taobao.businessworks</groupId>
-        <artifactId>platform-runtime</artifactId>
-      </dependency>
+
 
 
     <dependency>

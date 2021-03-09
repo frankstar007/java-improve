@@ -26,14 +26,10 @@
         <module>java-frame-learn</module>
         <module>spring-statemachine-learn</module>
         <module>spring-boot-deep</module>
-      <module>mtdp-work</module>
-<<<<<<< HEAD
         <module>java-concurrent</module>
-=======
         <module>spring-flowable</module>
-      <module>business-extention-framework</module>
+        <module>business-extention-framework</module>
         <module>mtdp-grocery-product</module>
->>>>>>> 0217c4c26f41de1d8dd77007303e69074a324c9c
     </modules>
 
     <properties>
@@ -203,17 +199,12 @@
 
 
             <dependency>
-                <groupId>com.taobao.businessworks</groupId>
-                <artifactId>platform-runtime</artifactId>
-                <version>1.0.0-SNAPSHOT</version>
-            </dependency>
-
-
-            <dependency>
                 <groupId>com.dianping.twork</groupId>
                 <artifactId>platform-runtime</artifactId>
                 <version>0.0.1-SNAPSHOT</version>
             </dependency>
+
+
 
 
 
