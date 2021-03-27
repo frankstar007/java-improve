@@ -21,6 +21,10 @@ public class ListTest {
 
 		List<Integer> A = Lists.newArrayList(1,2,3,4,5);
 
+
+		List<List<Integer>> items = Lists.partition(A, 2);
+		System.out.println(new Gson().toJson(A));
+
 		List<Integer> B = Lists.newArrayList(2,3,5);
 
 		A.removeAll(B);

@@ -19,6 +19,16 @@
     </dependency>
 
 
+
+    <dependency>
+      <groupId>com.sankuai.grocery.product.udc</groupId>
+      <artifactId>grocery-product-udc-common</artifactId>
+    </dependency>
+
+
+
+
+
     <dependency>
       <groupId>io.swagger</groupId>
       <artifactId>swagger-annotations</artifactId>

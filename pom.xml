@@ -56,6 +56,13 @@
                 <version>0.0.2</version>
             </dependency>
 
+
+            <dependency>
+                <groupId>com.sankuai.grocery.product.udc</groupId>
+                <artifactId>grocery-product-udc-common</artifactId>
+                <version>1.4.2</version>
+            </dependency>
+
             <dependency>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-starter-web</artifactId>
