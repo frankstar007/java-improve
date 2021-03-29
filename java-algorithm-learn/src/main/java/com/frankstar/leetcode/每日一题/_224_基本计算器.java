@@ -11,9 +11,4 @@ package com.frankstar.leetcode.每日一题;
 public class _224_基本计算器 {
 
 
-	public int calculate(String s) {
-
-
-
-	}
 }

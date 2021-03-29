@@ -1,5 +1,7 @@
 package com.frankstar.leetcode.排序;
 
+import com.google.gson.Gson;
+
 /**
  * @Author :  frankstar
  * @AddTime :  2021/3/27
@@ -12,41 +14,40 @@ package com.frankstar.leetcode.排序;
  */
 public class _合并排序的数组 {
 
-	public void merge(int[] A, int m, int[] B, int n) {
-		int i = 0;
-		int j = 0;
-		while (i < m && j <n) {
-			if (A[i] <= B[j]) {
-				i++;
-			} else {
-				for (int k = m+n-i-1; k > i; k--) {
-					A[k] = A[k-1];
+	public static void merge(int[] A, int m, int[] B, int n) {
+		for (int i=0; i<n; i++) {
+			A[m+i] = B[i];
+		}
+		selectSort(A);
+	}
+
+	private static void selectSort(int[] arr) {
+		for (int k =0; k<arr.length-1; k++) {
+			int minIndex = k;
+			for (int t = k+1; t<arr.length; t++) {
+				if (arr[t] < arr[minIndex]) {
+					minIndex = t;
 				}
-				A[i] = B[j];
-				j++;
+			}
+			//swap
+			if (k != minIndex) {
+				swap(arr, minIndex, k);
 			}
 		}
+	}
 
-		while (i < m) {
-			for (int k=m+n-1; k > m+n-1 - i; k--) {
-				A[k] = A[k-1];
-				i++;
-			}
-
-		}
-
-		while (j < n) {
-			for (int k= m+n-1; k> m+n-1 - j; k--) {
-				A[k] = B[j];
-				j++;
-			}
-
-		}
+	private static void swap(int[] arr, int minIndex, int k) {
+		int tmp = arr[minIndex];
+		arr[minIndex] = arr[k];
+		arr[k] = tmp;
 	}
 
 
 	public static void main(String[] args) {
-
+		int A[] = new int[]{1,2,4,5,6,0};
+		int B[] = new int[]{3};
+		merge(A, 5, B, 1);
+		System.out.println(new Gson().toJson(A));
 	}
 
 }
